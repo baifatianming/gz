@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="./css/public.css">
+  <link rel="stylesheet" type="text/css" href="./css/firstcommet.css">
+  <link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/font-awesome/css/font-awesome.min.css">
+  <script src="./js/swiper.min.js"></script>
+  <script src="./js/angular.min.js"></script>
+  <script src="./js/jquery-1.12.3.js"></script>
+  <script src="./libs/angular-ui-router.min.js"></script>
+  <script src="./js/maskljx.js"></script>
+  <script src="js/globle.js"></script>
+  <script src="./js/firstComment.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+
+  <div id="header">
+    <div id="gobackBtn">
+      <a href="./goodslist.html">
+       <i class="goback"></i>
+       <span id="gobackText">返回</span>
+     </a>
+   </div>
+   <span id="listStyle">商户详情</span>
+   <i id="shareBtn"></i>
+   <i id="searchBtn"></i>
+ </div>
+
+ <div id="forfree"></div>
+
+ <div id="shopList">
+  <h3 ng-bind="responseObj[0].name"></h3>
+  <span id="star"></span>
+  <span ng-bind="responseObj[0].del"></span>
+  <span>条</span>
+  <span>￥</span>
+  <span ng-bind="responseObj[0].price"></span>
+  <span>/每人</span>
+  <!-- <span ng-bind="responseObj[0].describe"></span> -->
+  <span ng-bind="responseObj[0].type"></span>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <img ng-repeat="num in responseObj" ng-src="{{num.src}}" class="swiper-slide">
+    </div>
+  </div>
+  <div id="purchase" class="clear">
+    <span>口味8.9</span>
+    <span>环境9.0</span>
+    <span>服务8.6</span>
+    <span id="purchaseBtn">买单</span>
+  </div>
+</div>
+
+<div class="link">
+  <i id="adressIcon" class="ico"></i>
+  <span class="Aname" ng-bind="responseObj[0].address"></span>
+  <i class="Ago"></i>
+</div>
+<div class="link">
+  <i id="phoneIcon" class="ico"></i>
+  <span class="Aname" ng-bind="response[0].phone"></span>
+  <i class="Ago"></i>
+</div>
+
+<div class="privilege" id="pri1">
+  <i id="privilegeIcon"></i>
+  <span class="privilegeCount">9折</span>
+  <span class="privilegeTime">每天11:00-02:00</span>
+  <span class="privilegeOnly">折扣仅适用于菜品</span>
+  <div>
+    <span class="privilegeMany">已买11000+</span>
+    <i class="Ago"></i>
+  </div>
+</div>
+<div class="privilege" id="pri2">
+  <i id="tuanIcon"></i>
+  <img src="./img/tuan.png">
+  <span class="introduce" ng-bind="response[0].describe">小鲜肉,建议2-4人使用,提供免费WIFI</span>
+  <span class="money1">￥</span>
+  <span class="money2">9.9</span>
+  <span class="money3">￥55</span>
+  <i class="Ago"></i>
+</div>
+
+<div class="recommend">
+  <div class="recommendTop">
+    <span class="recommendSpan">网友推荐</span>
+    <i id="recommendIcon"></i>
+    <i class="Ago"></i>
+  </div>
+  <div class="recommendBttom">
+    <a href="#">极品鲜毛肚</a>
+    <a href="#">极品鲜鹅肠</a>
+    <a href="#">极品黄喉</a>
+    <a href="#">极品虾滑</a>
+    <a href="#">茨帕</a>
+    <a href="#">精品千层肚</a>
+    <a href="#">麻辣牛肉</a>
+    <a href="#">西施冰粉</a>
+    <a href="#">龙哥巨无霸肥牛</a>
+    <a href="#">虾滑</a>
+    <a href="#">桃园三结义</a>
+    <a href="#">肥牛</a>
+  </div>
+</div>
+
+<div class="recommendTop">
+  <a href="./comment.html?shopingId={{responseObj[0].shopingId}}">
+    <span class="recommendSpan">网友评论</span>
+    <i class="Ago"></i>
+  </a>
+</div>
+
+<!-- 加载网友评论 -->
+<comment></comment>
+
+<div class="recommendTop">
+  <span class="recommendSpan">商家信息</span>
+</div>
+<div class="recommendTop">
+  <span class="recommendSpan">营业时间:11:00-02.00 周一至周日</span>
+</div>
+<div class="recommendTop">
+  <span class="recommendSpan">[本周热门火锅排行榜] 第17名</span>
+  <i class="Ago"></i>
+</div>
+
+<div class="recommendTop" id="elseLike">
+  <span class="recommendSpan" id="adverText">小伙伴们还喜欢</span>
+  <i class="advertiseMent">广告</i>
+</div>
+
+<div class="elseRecom">
+  <div class="elseTop">
+    <h4>爽牛满 爽腩鲜牛肉火锅(太古仓店)</h4>
+    <span class="elseStar"></span>
+    <span class="elseSize">￥85/每人</span>
+    <span class="elseSize">海珠区</span>
+    <span class="elseSize">火锅</span>
+    <i></i>
+  </div>
+  <img src="./img/else.jpg">
+  <span class="elseiro">午时宵夜双人套餐</span>
+  <span class="money4">￥</span>
+  <span class="money5">99</span>
+  <span class="money6">￥138</span>
+  <span class="elseMany">已售75</span>
+</div>
+<div class="elseRecom">
+  <div class="elseTop">
+    <h4>爽牛满 爽腩鲜牛肉火锅(太古仓店)</h4>
+    <span class="elseStar"></span>
+    <span class="elseSize">￥85/每人</span>
+    <span class="elseSize">海珠区</span>
+    <span class="elseSize">火锅</span>
+    <i></i>
+  </div>
+  <img src="./img/else.jpg">
+  <span class="elseiro">午时宵夜双人套餐</span>
+  <span class="money4">￥</span>
+  <span class="money5">99</span>
+  <span class="money6">￥138</span>
+  <span class="elseMany">已售75</span>
+</div>
+<div class="elseRecom">
+  <div class="elseTop">
+    <h4>爽牛满 爽腩鲜牛肉火锅(太古仓店)</h4>
+    <span class="elseStar"></span>
+    <span class="elseSize">￥85/每人</span>
+    <span class="elseSize">海珠区</span>
+    <span class="elseSize">火锅</span>
+    <i></i>
+  </div>
+  <img src="./img/else.jpg">
+  <span class="elseiro">午时宵夜双人套餐</span>
+  <span class="money4">￥</span>
+  <span class="money5">99</span>
+  <span class="money6">￥138</span>
+  <span class="elseMany">已售75</span>
+</div>
+
+<div id="writeCom">
+  <a href="#" id="write"><i class="Comimg"></i><span>写评论</span></a>
+  <a href="#" id="psimg"><i id="psing" class="Comimg"></i><span>传图片</span></a>
+</div>
+</body>
+<script>
+
+</script>
+</html>

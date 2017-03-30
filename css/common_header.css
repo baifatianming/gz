@@ -1,0 +1,58 @@
+/*header*/
+*
+{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+.clear
+{
+	clear: both;
+}
+html,body
+{
+	height: 100%;
+	background: rgb(240,240,240);
+}
+.back:before
+{
+	border: #646464 solid 3px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    margin-top: -8px;
+    display: block;
+    content: '\20';
+    width: 12px;
+    height: 12px;
+    border-top: none;
+    border-right: none;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+header
+{
+	height:45px;
+	width:100%;
+	line-height: 45px;
+	position: relative;
+	border: 1px solid rgb(240,240,240);
+	background: rgb(240,240,240);
+}
+.back
+{
+	text-decoration: none;
+	font-size: 14px;
+	margin-left: 25px;
+	color:#646464;
+}
+.header-text
+{
+	font-size: 16px;
+	color: #646464;
+	position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+/*--------------------------------分割线--------------------------------*/

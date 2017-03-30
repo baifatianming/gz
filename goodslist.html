@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="./css/goodslist.css">
+  <link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
+  <script src="./js/jquery-1.12.3.js"></script>
+  <script type="text/javascript" src="./js/angular.min.js"></script>
+  <script type="text/javascript" src="./js/swiper.min.js"></script>
+  <script src="./js/globle.js"></script>
+  <script type="text/javascript" src="./js/mask.js"></script>
+  <script type="text/javascript" src="./js/goodslist.js"></script>
+
+</head>
+<body>
+
+  <div ng-app="goodsApp" ng-controller="goodsCtroller">
+    <div id="mask" style="display:none"></div>
+    <div class="X_header" >
+      <header class="list_header">
+        <a class="newback" href="./index.html"></a>
+        <div class="list_type">
+          <div class="list_center">
+            <a>商户</a>
+            <a>闪惠抢购</a>
+          </div>
+        </div>
+        <div class="newsearch"></div>
+      </header>
+      <nav class="list_nav">
+        <div class="list_cat clear ">
+          <a ng-click="show()">全部商品<i class="drop"></i></a>
+          <a ng-click="show()">全部美食<i class="drop"></i></a>
+          <a ng-click="show()">智能排序<i class="drop"></i></a>
+        </div>
+        <pull></pull>
+      </nav>
+      <ul class="list_goods">
+
+        <li ng-repeat="(key,value) in goods">
+          <a class="list_item clear"  ng-href="./firstComment.html?shoppingId={{goods[key].shopingId}}&name={{goods[key].name}}">
+            <div class="list_pic">
+              <img ng-src="{{goods[key].src}}" alt="">
+            </div>
+            <div class="list_content">
+              <div class="name">
+                <h3>
+                  <span class="shop_name" style="max-width: 279px" ng-bind="goods[key].name"></span>
+                </h3>
+              </div>
+              <div class="comment">
+                <span class="star" star="{{goods[key].start}}"></span>
+                <span>￥{{goods[key].price}}/人</span>
+              </div>
+              <div class="intro">
+                <span ng-bind="goods[key].describe"></span>
+                <span class="type" ng-bind="goods[key].message"></span>
+              </div>
+            </div>
+          </a>
+          <div class="new_coupon">
+            <a class="coupon">
+              <span class="coupon_tag juan"></span>
+              <span class="coupon_info" ng-bind="goods[key].team"></span>
+              <i class="arrowent"></i>
+            </a>
+            <a class="coupon">
+              <span class="coupon_tag tuan"></span>
+              <span class="coupon_info">288元 新春特惠六人餐</span>
+              <i class="arrowent"></i>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <footer class="footer">
+      <a href="">我的</a><strong>|</strong>
+      <a href="" title="">社区论坛</a><strong>|</strong>
+      <a href="">添加商户</a><strong>|</strong>
+      <a href="" title="">意见反馈</a>
+      <br>
+      <a href="" title="">美团网</a><strong>|</strong>
+      <a href="" title="">美团下载</a><strong>|</strong>
+      <a href="" title="">结婚</a><strong>|</strong>
+      <a href="">亲子</a><strong>|</strong>
+      <a href="" title="">家装</a><strong>|</strong>
+      <a href="" title="">宴会</a><strong>|</strong>
+      <a href="" title="">教育</a>
+      <br>
+      <a  href="" title="">电脑版</a><strong>|</strong>
+      <a  href="javascript:void(0)" title="">客户端</a>
+      <br>
+      <p>copyright ?2017 dianping.com</p>
+    </footer>
+
+  </div>
+</body>
+</html>

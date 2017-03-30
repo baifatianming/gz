@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="./css/public.css">
+  <link rel="stylesheet" type="text/css" href="./css/comment.css">
+  <link rel="stylesheet" type="text/css" href="./css/font-awesome/css/font-awesome.min.css">
+  <script src="./js/angular.min.js"></script>
+  <script src="./js/jquery-1.12.3.js"></script>
+  <script src="./js/maskljx.js"></script>
+  <script src="js/globle.js"></script>
+  <script src="./js/comment.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+  <div id="header">
+  <a href="./firstComment.html?shopingId={{responseObj[0].shopingId}}">
+  <i class="goback"></i><span>网友点评</span>
+  </a>
+  </div>
+  <div class="comment">
+    <ul>
+      <li class="clear" ng-repeat="pro in responseObj">
+        <div class="commentLeft">
+          <img ng-src='{{pro.iconimg}}'>
+          <div class="userLv"></div>
+        </div>
+        <div class="commentRight">
+          <p class="username" ng-bind='pro.username'></p>
+          <span class="time" ng-bind="pro.data"></span>
+          <span class="star" star="{{pro.star}}"></span>
+          <div class="goodcomment"></div>
+          <p class="commentP" ng-bind="pro.context"></p>
+          <div class='commentImg'>
+          <img src="./img/niuchi_comment01.jpg">
+          <img src="./img/niuchi_comment02.jpg">
+          <img src="./img/niuchi_comment03.jpg">
+          <img src="./img/niuchi_comment04.jpg">
+          <img src="./img/niuchi_comment05.jpg">
+          <img src="./img/niuchi_comment06.jpg">
+          <img src="./img/niuchi_comment07.jpg">
+          <img src="./img/niuchi_comment08.jpg">
+          <img src="./img/niuchi_comment09.jpg">
+        </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

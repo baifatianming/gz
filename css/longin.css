@@ -1,0 +1,223 @@
+*
+{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+html,body
+{	
+	// font-size:625%;
+	height: 100%;
+	background: #f0f0f0;
+}
+a{
+	text-decoration: none;
+}
+.login{
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	margin: 0 auto;
+	max-width: 750px;
+	min-width: 320px;
+}
+header{
+	text-align:center;
+    background: #fcfcfc;
+    border-bottom: 1px solid #f63;
+    padding: 0 15px;
+	height: 46px;
+    width:100%;
+    display:flex;
+    line-height:46px;
+    position: relative;
+    min-height:45px;
+}
+header>div{
+	// float:left;
+}
+header>div.back{
+	color:#f63;
+	text-align:left;
+	flex: 10%;
+}
+header>div.title{
+	font-size:18px;
+	flex: 80%;
+	text-align:center;
+}
+header>div.register{
+	flex: 10%;
+}
+
+header>div.back>a{
+	color:#f63;
+}
+header>div.back>a>i{
+	font-size: 30px;
+}
+
+.login-form{
+    padding-left: 15px;
+    font-size: 14px;
+    background-color: #fff;
+    margin-top: 16px;
+    background: #fff;
+    min-height: 90px;
+}
+
+.login-form>div.phoneNumber{
+	display:flex;
+    height: 45px;
+}
+.login-form>div.phoneNumber>input{
+	border:none;
+}
+.login-form>div.phoneNumber:nth-child(1){
+	border-bottom:1px solid #ccc;
+	box-sizing:border-box;
+}
+.login-form>div.phoneNumber .mobile{
+    height: 22px;
+    line-height: 22px;
+	margin-top:12px;
+    width: 60px;
+    border-right: 1px solid #e0e0e0;
+    font-size: 16px;
+    color: #333;
+}
+.login-form>div.phoneNumber>input{
+	display: block;
+    border: none;
+    height: 24px;
+    line-height: 24px;
+    padding: 10px 0 10px 10px;
+    font-size: 15px;
+    outline: 0;
+    color: #333;
+    margin-left:18px;
+    width:40%;
+}
+.login-form>div.phoneNumber:nth-child(1)>a{
+	border:1px solid #bbb;
+	border-radius: 2px;
+	line-height: 25px;
+    height: 25px;
+    color:#333;
+    padding: 0 10px;
+    border-radius:5%;
+    margin-top: 9px;
+}
+.login-form>div.phoneNumber:nth-child(2)>div{
+    height: 22px;
+    line-height: 22px;
+	margin-top:12px;
+    font-size: 16px;
+    color: #333;
+}
+.login-form>div.phoneNumber:nth-child(2)>input{
+	margin-left: 32px
+}
+.login-form>div.phoneNumber:nth-child(2) .randomNum{
+	width:93px;
+}
+.login .form-info{
+	color: #999;
+    font-size: 12px;
+    line-height: 12px;
+    margin-top: 5px;
+    text-align: center;
+}
+.login .form-button{
+	margin-top: 12px;
+    text-align: center;
+    padding: 0 15px;
+}
+.login .form-button>a{
+	line-height: 40px;
+    color: #fff;
+    background: #f63;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 14px;
+    letter-spacing: 6px;
+    display: block;
+    cursor: auto;
+    font-weight: lighter;
+}
+.login .form-button .login-user{
+	margin-top: 14.5px;
+    display: block;
+    text-align: right;
+}
+.login .form-button .login-user>a{
+	color: #466889;
+    text-decoration: none;
+    font-size: 14px;
+}
+footer{
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    margin-top: 75px;
+}
+footer .seperator{
+	display: -webkit-box;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    padding: 0 15px;
+}
+
+footer .seperator .line{
+	background: #d7d7d7;
+    height: 1px;
+    -webkit-box-flex: 1
+}
+footer .seperator .text{
+    color: #999;
+    font-size: 15px;
+    padding:0 20px;
+}
+footer .icons{
+	width: 148px;
+    margin: 20px auto 0;
+    display: -webkit-box;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+
+}
+footer .icons .icons-qq{
+	background: url(../img/oauth.png) 0 0 no-repeat;
+	width: 35px;
+    height: 35px;
+    font-size: 35px;
+    background-size: 35px 105px;
+    display: block;
+    -webkit-border-radius: 4.5px;
+    border-radius: 4.5px;
+}
+footer .icons .icons-weibo{
+	background: url(../img/oauth.png) 0 0 no-repeat;
+	width: 35px;
+    height: 35px;
+    font-size: 35px;
+    background-size: 35px 105px;
+    background-position: 0 -35px;
+    display: block;
+    -webkit-border-radius: 4.5px;
+    border-radius: 4.5px;	
+}
+.agreement {
+    position: absolute;
+    top: 475px;
+    height: 42px;
+    margin-top: -42px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 12px;
+    color: #999;
+}
+.agreement>a{
+    color: #466889;
+}

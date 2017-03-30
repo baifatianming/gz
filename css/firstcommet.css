@@ -1,0 +1,579 @@
+@charset "utf-8";
+#header{
+  widows: 100%;
+  height:45px;
+  background: white;
+  box-sizing: border-box;
+  line-height: 45px;
+  position: relative;
+}
+#header #gobackBtn{
+  display:inline-block;
+}
+#header #gobackText{
+  padding-left: 25px;
+  font-size: 14px;
+}
+#header #listStyle{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#header .goback{
+  width:25px;
+  height: 25px;
+  display: inline-block;
+  /*margin-left:10px;*/
+  background: url(../img/back.png) center no-repeat;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+#header #shareBtn{
+  display: inline-block;
+  width:30px;
+  height:45px;
+  position: absolute;
+  right:40px;
+  background: url(../img/list.png);
+  background-size:50px auto;
+  background-position: 0 -403px;
+}
+#header #searchBtn{
+  display: inline-block;
+  width:30px;
+  height: 45px;
+  position: absolute;
+  right:5px;
+  background:url(../img/searchbtn.png) no-repeat center;
+  background-size:100%;
+}
+#forfree{
+  background: url(../img/free.png) right -50px no-repeat;
+  background-size: auto 230px;
+  width: 65px;
+  height: 45px;
+  right: -1px;
+  display: block;
+  z-index: 99;
+  position: fixed;
+  bottom: 120px;
+}
+#shopList{
+  background: white;
+  box-sizing: border-box;
+  margin-top:3px;
+}
+#shopList h3{
+  font-weight: normal;
+  padding:5px 0 0 10px;
+}
+#shopList span{
+  font-size: 12px;
+  color:#999;
+}
+#shopList #star{
+  display: inline-block;
+  width: 66px;
+  height:12px;
+  background: url(../img/star.png) no-repeat center;
+  background-size: 86px auto;
+  background-position: 0 -32px;
+  margin:0 10px;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  margin:10px 0 0 0;
+}
+.swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+#purchase{
+  padding:10px 0;
+  border-bottom:1px solid #f0f0f0;
+}
+#purchase>span{
+  font-size: 12px;
+  color: #999;
+  margin-left: 10px;
+  line-height: 30px;
+}
+#purchase #purchaseBtn{
+  display: inline-block;
+  width: 85px;
+  height: 30px;
+  background: red;
+  text-align: center;
+  float: right;
+  color: white;
+  border-radius: 3px;
+  font-size:14px;
+  margin-right:5px;
+}
+.link{
+  background: white;
+  height: 8%;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+}
+.ico{
+  width:15px;
+  height:15px;
+  display: inline-block;
+  position: absolute;
+  top:50%;
+  left:5%;
+  transform: translateY(-50%);
+}
+#adressIcon{
+  background:url(../img/size.png) no-repeat center;
+  background-size:100%;
+}
+.Aname{
+  position: absolute;
+  top:50%;
+  left:12%;
+  color:#323232;
+  transform: translateY(-50%);
+  max-width: 75%;
+  font-size:14px;
+}
+.Ago{
+  width:15px;
+  height:15px;
+  background:url(../img/go.png) no-repeat center;
+  background-size:100%;
+  position: absolute;
+  top:50%;
+  right:5%;
+  transform: translateY(-50%);
+}
+#phoneIcon{
+  background: url(../img/phone.png) no-repeat center;
+  background-size: 100%;
+}
+.privilege{
+  height: 12%;
+  background: white;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+  box-sizing: border-box;
+}
+#pri1{
+  margin-top:10px;
+}
+#pri2{
+  margin-bottom:10px;
+}
+#privilegeIcon{
+  background: url(../img/ico2.png) -116px -117px no-repeat;
+  background-size: 140px;
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+.privilege>span{
+  font-size:13px;
+  position: absolute;
+  left:40px;
+}
+.privilege .privilegeCount{
+  font-size: 14px;
+  top:15px;
+}
+.privilegeTime{
+  color:#999;
+  top:34px;
+}
+.privilegeOnly{
+  color:#999;
+  top:49px;
+}
+.privilegeMany{
+  position:absolute;
+  top:50%;
+  right:60px;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #999;
+}
+#tuanIcon{
+  background: url(../img/ico2.png) -38px -57px no-repeat;
+  background-size: 140px;
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+.privilege>img{
+  width: 60px;
+  height: 45px;
+  position: absolute;
+  left:40px;
+  top:10px;
+}
+.privilege .introduce{
+  left:110px;
+  top:20px;
+  font-size: 14px;
+}
+.privilege .money1{
+  left: 110px;
+  color:red;
+  top:50px;
+}
+.privilege .money2{
+  left:125px;
+  top:45px;
+  color: red;
+  font-size: 18px;
+}
+.privilege .money3{
+  left:155px;
+  top:50px;
+  color: #999;
+  text-decoration: line-through;
+}
+.recommend{
+  /*height: 20%;*/
+  background: white;
+  margin-bottom: 10px;
+}
+.recommendTop{
+  position: relative;
+  border-bottom:1px solid #f0f0f0;
+  background: white;
+  width: 100%;
+}
+.recommendSpan{
+  display:block;
+  padding-left: 10px;
+  line-height:40px;
+}
+#recommendIcon{
+  background: url(../img/list.png) 0 -576px no-repeat;
+  background-size: 64px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  vertical-align: middle;
+  margin-left: 5px;
+  top:50%;
+  transform: translateY(-50%);
+  left:75px;
+}
+.recommendBttom{
+  box-sizing: border-box;
+  padding: 10px;
+}
+.recommendBttom a{
+  font-size: 14px;
+  text-decoration: none;
+  color:#999;
+  margin:6px 5px 0 0;
+}
+.comment{
+  width:100%;
+  background: white;
+  padding:10px;
+  /*margin-top: 16px;*/
+  box-sizing: border-box;
+  position: relative;
+}
+.comment{
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+.comment>ul>li{
+  margin-bottom: 15px;
+}
+.commentLeft{
+  float: left;
+  width: 10%;
+  box-sizing: border-box;
+  position: relative;
+}
+.commentLeft .userLv{
+  position: absolute;
+  top: 38px;
+  right: -13px;
+  width: 30px;
+  height: 10px;
+  background: url(../img/level4.png) no-repeat center;
+  background-size: 100%;
+}
+.commentLeft>img{
+  border-radius: 50%;
+}
+.commentRight{
+  float: right;
+  width:82%;
+  box-sizing: border-box;
+  position: relative;
+}
+.commentRight .username{
+  font-size: 15px;
+  background: white;
+}
+.commentRight .star{
+  display: inline-block;
+  width: 66px;
+  height:12px;
+  background: url(../img/star.png) no-repeat center;
+  background-size: 100%;
+  background-position-y: -10px;
+}
+.commentRight .commentP{
+  background: white;
+  width:98%;
+  max-height: 127px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  margin-bottom:10px;
+}
+.commentRight .commentImg>img{
+  width:31%;
+  height:30%;
+}
+.commentRight .time{
+  position: absolute;
+  font-size: 12px;
+  color:#999;
+  top:2%;
+  right: 5%;
+}
+@media screen and (min-width: 1200px) {
+  .commentLeft{
+    width: 5%;
+  }
+  .commentLeft .userLv{
+    right:22px;
+  }
+  .commentRight{
+    width:95%;
+  }
+  .commentRight .commentP{
+    width:99%;
+  }
+  .commentRight .time{
+    color:#999;
+    top:2%;
+    right:2%;
+  }
+  .commentRight .commentImg>img{
+    width:33%;
+  }
+}
+/*在992 和1199 像素之间的屏幕里，中等屏幕，分辨率低的PC*/
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+ .commentLeft{
+  width: 5%;
+}
+.commentLeft .userLv{
+  right: 7px;
+}
+.commentRight{
+  width:94%;
+}
+.commentRight .commentP{
+  width:99%;
+}
+.commentRight .commentImg>img{
+  width:32%;
+}
+.commentRight .time{
+  color:#999;
+  top:2%;
+  right:3%;
+}
+}
+/*在768 和991 像素之间的屏幕里，小屏幕，主要是PAD*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+ .commentLeft{
+  float: left;
+  width: 5%;
+  box-sizing: border-box;
+}
+.commentRight{
+  float: right;
+  width:92%;
+  box-sizing: border-box;
+}
+.commentRight .commentP{
+  width:99%;
+}
+.commentRight .commentImg>img{
+  width:32%;
+}
+.commentRight .time{
+  color:#999;
+  top:2%;
+  right:3%;
+}
+}
+/*在480 和767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media screen and (min-width: 480px) and (max-width: 767px) {
+ .commentLeft{
+  float: left;
+  width: 5%;
+  box-sizing: border-box;
+}
+.commentRight{
+  float: right;
+  width:92%;
+  box-sizing: border-box;
+}
+.commentRight .commentP{
+  width:99%;
+}
+.commentRight .commentImg>img{
+  width:32%;
+}
+}
+#elseLike{
+  background:#f0f0f0;
+}
+#elseLike #adverText{
+  display: inline-block;
+  font-size:14px;
+  color: #999;
+}
+#elseLike .advertiseMent{
+  position: absolute;
+  right: 10px;
+  font-style: normal;
+  top:50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #999;
+}
+.elseRecom{
+  width: 100%;
+  background: white;
+  position: relative;
+  box-sizing: border-box;
+  padding: 10px 0 10px 10px;
+  margin-bottom: 10px;
+}
+.elseTop{
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom:10px;
+  padding-bottom:5px;
+  box-sizing: border-box;
+}
+.elseTop h4{
+  font-weight: normal;
+}
+.elseStar{
+  display: inline-block;
+  width: 66px;
+  height: 12px;
+  vertical-align: middle;
+  background: url(../img/star.png) no-repeat;
+  background-size: 86px auto;
+  background-position: 0 -15px;
+}
+.elseSize{
+  font-size: 12px;
+  color: #999;
+}
+.elseRecom img{
+  width:94px;
+  height: 70px;
+}
+.elseRecom .elseiro{
+  position: absolute;
+  left:110px;
+  top:70px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.elseRecom .money4{
+ position: absolute;
+ font-size: 12px;
+ left: 110px;
+ color:red;
+ top:100px;
+}
+.elseRecom .money5{
+  position: absolute;
+  left:125px;
+  top:95px;
+  color: red;
+  font-size: 18px;
+}
+.elseRecom .money6{
+ font-size:12px;
+ position: absolute;
+ left:155px;
+ top:100px;
+ color: #999;
+ text-decoration: line-through;
+}
+.elseRecom .elseMany{
+  position: absolute;
+  right:20px;
+  top:100px;
+  font-size: 14px;
+  color: #999;
+}
+#writeCom{
+  width: 100%;
+  height: 8%;
+  background: white;
+  box-sizing: border-box;
+  /*position: relative;*/
+}
+#writeCom>a{
+  text-decoration: none;
+  position:relative;
+  width:49%;
+  height:100%;
+  display: inline-block;
+}
+.Comimg{
+  display: inline-block;
+  position: absolute;
+  top:20%;
+  transform: translateY(-50%);
+  left:50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 27px;
+  background: url(../img/list.png) -1px 0 no-repeat;
+  background-size: 68px;
+}
+#psing{
+  background: url(../img/list.png) -1px -43px no-repeat;
+  background-size: 68px;
+}
+#psimg{
+  border-left:1px solid #f0f0f0;
+}
+#writeCom span{
+  font-size: 12px;
+  color:#999;
+  position: absolute;
+  bottom:5%;
+  transform: translateY(-50%);
+  left:50%;
+  transform: translateX(-50%);
+}

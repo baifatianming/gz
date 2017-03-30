@@ -1,0 +1,209 @@
+@charset "utf-8";
+#header{
+  widows: 100%;
+  height:45px;
+  background: white;
+  box-sizing: border-box;
+  line-height: 45px;
+  position: relative;
+}
+#header span{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#header .goback{
+  width:25px;
+  height: 25px;
+  display: inline-block;
+  margin-left:10px;
+  background: url(../img/back.png) center no-repeat;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+.comment{
+  width:100%;
+  background: white;
+  padding:10px;
+  margin-top: 16px;
+  box-sizing: border-box;
+  position: relative;
+}
+.comment>ul>li{
+  margin-bottom: 15px;
+}
+.commentLeft{
+  float: left;
+  width: 10%;
+  box-sizing: border-box;
+  position: relative;
+}
+.commentLeft .userLv{
+  position: absolute;
+  top: 38px;
+  right: -13px;
+  width: 30px;
+  height: 10px;
+  background: url(../img/level4.png) no-repeat center;
+  background-size: 100%;
+}
+.commentLeft>img{
+  border-radius: 50%;
+}
+.commentRight{
+  float: right;
+  width:82%;
+  box-sizing: border-box;
+  position: relative;
+}
+.commentRight .username{
+  font-size: 15px;
+  background: white;
+}
+.commentRight .star{
+  display: inline-block;
+  width: 66px;
+  height:12px;
+  background: url(../img/star.png) no-repeat center;
+  background-size: 100%;
+  background-position-y: -10px;
+}
+.commentRight .commentP{
+  background: white;
+  width:98%;
+  max-height: 127px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  margin-bottom:10px;
+}
+.commentRight .commentImg>img{
+  width:31%;
+  height:30%;
+}
+.commentRight .time{
+  position: absolute;
+  font-size: 12px;
+  color:#999;
+  top:2%;
+  right: 5%;
+}
+.commentRight .goodcomment{
+  position: absolute;
+  width:12%;
+  height:10%;
+  top:0%;
+  right:5%;
+  background: url(../img/greatcomment.png) no-repeat center;
+  background-size: 100%;
+}
+@media screen and (min-width: 1200px) {
+  .commentLeft{
+    width: 5%;
+  }
+  .commentLeft .userLv{
+    right:22px;
+  }
+  .commentRight{
+    width:95%;
+  }
+  .commentRight .commentP{
+    width:99%;
+  }
+  .commentRight .time{
+    color:#999;
+    top:2%;
+    right:2%;
+  }
+  .commentRight .commentImg>img{
+    width:33%;
+  }
+  .commentRight .goodcomment{
+   width: 3%;
+   height: 4%;
+   top: 0%;
+   right: 2%;
+ }
+}
+/*在992 和1199 像素之间的屏幕里，中等屏幕，分辨率低的PC*/
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+ .commentLeft{
+  width: 5%;
+}
+.commentLeft .userLv{
+  right: 7px;
+}
+.commentRight{
+  width:94%;
+}
+.commentRight .commentP{
+  width:99%;
+}
+.commentRight .commentImg>img{
+  width:32%;
+}
+.commentRight .time{
+  color:#999;
+  top:2%;
+  right:3%;
+}
+.commentRight .goodcomment{
+ width: 5%;
+ height: 5%;
+ top: 0%;
+ right: 3%;
+}
+}
+/*在768 和991 像素之间的屏幕里，小屏幕，主要是PAD*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+ .commentLeft{
+  float: left;
+  width: 5%;
+  box-sizing: border-box;
+}
+.commentRight{
+  float: right;
+  width:92%;
+  box-sizing: border-box;
+}
+.commentRight .commentP{
+  width:99%;
+}
+.commentRight .commentImg>img{
+  width:32%;
+}
+.commentRight .time{
+  color:#999;
+  top:2%;
+  right:3%;
+}
+.commentRight .goodcomment{
+  width:6%;
+  height:6%;
+  right:3%;
+}
+}
+/*在480 和767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media screen and (min-width: 480px) and (max-width: 767px) {
+ .commentLeft{
+  float: left;
+  width: 5%;
+  box-sizing: border-box;
+}
+.commentRight{
+  float: right;
+  width:92%;
+  box-sizing: border-box;
+}
+.commentRight .commentP{
+  width:99%;
+}
+.commentRight .commentImg>img{
+  width:32%;
+}
+.commentRight .goodcomment{
+  width:9%;
+  height:8%;
+  right:4%;
+}
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>首页</title>
+    <link rel="stylesheet" href="./css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src='./js/jquery-1.12.3.js'></script>
+    <script src='./js/angular.min.js'></script>
+    <script src="js/globle.js"></script>
+    <script src='js/index.js'></script>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+    <!-- 顶部fixed定位 -->
+    <div class="top">
+        <div class="left">
+            <a class="city">广州</a>
+            <i class="fa fa-chevron-down"></i>
+        </div>
+        <div class="middle clear">
+            <i class="fa fa-search"></i>
+            <input type="text" class="input" placeholder="输入商户名、地点">
+        </div>
+        <div class="right clear">
+            <a href="./login.html"></a>
+        </div>
+    </div>
+    <!-- 头部 背景-->
+    <header>
+        <div><i></i>
+            <h3>新用户专享福利</h3></div>
+        <li>
+            <a href="" class="num1">打开APP</a>
+            <a href="" class="num2">下载APP领礼物</a>
+        </li>
+    </header>
+    <!-- nav nav nav -->
+    <ul class="nav" nav='nav'>
+    </ul>
+    <!-- //主页轮播 -->
+    <div class="shift" shift="shift">
+    </div>
+    <!-- banner banner -->
+    <div class="banner">
+        <a href=""><img src="img/tejia.jpg" alt=""></a>
+    </div>
+    <!-- 特卖特卖 -->
+    <div class="cutOff">
+        <div class="common">
+            <li class="clear">
+                <a href=""><img src="img/activities.png" alt=""></a>
+                <h3><a href="">外卖招牌菜</a></h3>
+                <br>
+                <p>强力推荐</p>
+            </li>
+        </div>
+        <div class="common">
+            <li class="clear">
+                <a href=""><img src="img/activities1.png" alt=""></a>
+                <h3><a href="">全城特惠</a></h3>
+                <br>
+                <p>邂逅大品牌</p>
+            </li>
+        </div>
+        <div class="common">
+            <ul>
+                <li class="clear left">
+                    <a href=""><img src="img/activities2.png" alt=""></a>
+                    <h3><a href="">有颜就有钱</a></h3>
+                    <br>
+                    <p>抢66元红包</p>
+                </li>
+            </ul>
+        </div>
+        <div class="common">
+            <ul>
+                <li class="clear right">
+                    <a href=""><img src="img/activities.png" alt=""></a>
+                    <h3><a href="">狂欢酷跑节</a></h3>
+                    <br>
+                    <p>领免费电影票</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 超值特惠 -->
+    <div class="bargin">
+        <div>
+            <li>
+                <h3>超值特惠</h3>
+                <a href="">更多优惠  <i class="fa fa-chevron-right"></i></a>
+            </li>
+            <ul>
+                <li>
+                    <img src="img/bargin.jpg" alt="">
+                    <p>百膳厨餐厅</p>
+                    <span>￥1  </span>
+                    <del>12</del>
+                </li>
+                <li>
+                    <img src="img/bargin2.jpg" alt="">
+                    <p>品上西餐厅</p>
+                    <span>￥1  </span>
+                    <del>12</del>
+                </li>
+                <li>
+                    <img src="img/bargin3.jpg" alt="">
+                    <p>恒大清远鸡</p>
+                    <span>￥1  </span>
+                    <del>12</del>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bargin">
+        <div>
+            <li>
+                <h3>天天立减</h3>
+                <a href="">更多优惠  <i class="fa fa-chevron-right"></i></a>
+            </li>
+            <ul>
+                <li>
+                    <img src="img/lijian.jpg" alt="">
+                    <p>尚大咖啡烘焙</p>
+                    <span>￥223  </span>
+                    <del>543</del>
+                </li>
+                <li>
+                    <img src="img/lijian2.jpg" alt="">
+                    <p>东阿阿胶</p>
+                    <span>￥56  </span>
+                    <del>112</del>
+                </li>
+                <li>
+                    <img src="img/lijian3.jpg" alt="">
+                    <p>Thank u mom非油炸健康鸡</p>
+                    <span>￥88  </span>
+                    <del>212</del>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 猜你喜欢 猜你喜欢 猜你喜欢 -->
+    <div class="guess">
+        <h3>猜你喜欢</h3>
+        <!-- <li class="gift">
+            <img src="img/gift.png" alt="">
+            <div>
+                <h3>免费领取福利</h3>
+                <p>200元优惠及各种大奖等你来抢</p>
+                <a href="">去领取</a>
+            </div>
+        </li> -->
+        <li ng-repeat="x in data" ng-click="skip(x.shopingId)">
+            <img ng-src="{{x.src}}" alt="picture" >
+            <div>
+                <h3 ng-bind="x.name"></h3>
+                <p ng-bind="x.describe"></p>
+                <div>
+                    <span ng-bind="'￥'+x.price"></span>
+                    <del ng-bind="'￥'+x.del" ng-if="x.del">￥12</del>
+                    <i ng-bind="'已售'+x.buyCount"></i>
+                </div>
+                <strong ng-bind="x.message" ng-if="x.message"></strong>
+                
+            </div>
+        </li>
+    </div>
+
+    <!-- 底部 -->
+    <footer class="footer">
+        <a href="/my">我的</a><strong>|</strong>
+        <a href="/forum" title="">社区论坛</a><strong>|</strong>
+        <a href="">添加商户</a><strong>|</strong>
+        <a href="" title="">意见反馈</a>
+        <br>
+        <a href="" title="">美团网</a><strong>|</strong>
+        <a href="" title="">美团下载</a><strong>|</strong>
+        <a href="" title="">结婚</a><strong>|</strong>
+        <a href="">亲子</a><strong>|</strong>
+        <a href="" title="">家装</a><strong>|</strong>
+        <a href="" title="">宴会</a><strong>|</strong>
+        <a href="" title="">教育</a>
+        <br>
+        <a  href="" title="">电脑版</a><strong>|</strong>
+        <a  href="javascript:void(0)" title="">客户端</a>
+        <br>
+        <p>copyright ©2017 dianping.com</p>
+    </footer>
+
+
+    <!-- //右侧固定定位 -->
+    <div class="rightFixed"></div>
+
+    <div class="test"></div>
+</body>
+
+</html>

@@ -1,0 +1,441 @@
+body,ul,li,h1,h2,h3,p{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+
+  font-family: Hiragino Sans GB,Arial,Helvetica,\\5B8B\4F53,sans-serif;
+}
+body,html{
+  height: 100%;
+}
+body{
+  font-size: 14px;
+
+}
+/*-----------------------------*/
+.list_nav .selector .second-left .swiper-container,.list_nav .selector .second-right .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+
+.list_nav .selector .second-left .swiper-slide,.list_nav .selector .second-right .swiper-slide{
+  font-size: 14px;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
+
+/*-------------------------*/
+li{
+  list-style: none
+}
+.clear:after{
+  content: '';
+  display: block;
+  clear: both;
+}
+#mask{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 200;
+}
+.X_header .list_header{
+  width: 100%;
+  background-color: #eee;
+  min-height: 45px;
+  line-height: 45px;
+  position: relative;
+  z-index: 300;
+}
+.X_header .list_header .newback{
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  width: 33px;
+  height: 32px;
+  background: url(../img/ico.png) -62px -20px no-repeat;;
+  background-size: 91px auto;
+}
+.X_header .list_header .list_type{
+  width: 99%;
+  padding-top:7px;
+  margin: 0 auto;
+  height: 38px;
+  background: #eee;
+  text-align: center;
+}
+.X_header .list_header .newsearch{
+  border-radius: 8px;
+  border: 2px solid #f63;
+  width: 12px;
+  height: 12px;
+  top: 1px;
+  right: 8px;
+  position: absolute;
+  margin: 10px;
+}
+.X_header .list_header .newsearch:after{
+  content: "";
+  display: block;
+  width: 9px;
+  height: 2px;
+  border-top: 2px solid #f63;
+  transform: rotate(45deg);
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+}
+.X_header .list_header .list_type a{
+
+  width: 50%;
+  height: 100%;
+  float: left;
+  line-height: 28px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 1px solid #ff8400;
+  color: #ff8400;
+}
+.list_header .list_type a:first-child{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background: #ff8400;
+  color:white;
+}
+.list_header .list_type a:last-child{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.list_header .list_type .list_center{
+  width: 150px;
+  margin: 0 auto;
+
+}
+
+/*listheader end*/
+
+
+.X_header .list_nav{
+  background: #fff;
+  width: 100%;
+}
+
+
+
+.X_header .list_nav .list_cat{
+  padding: 10px 0;
+  border-top:1px solid #eee;
+  border-bottom :1px solid #eee;
+}
+.X_header .list_nav .list_cat a{
+  display: block;
+  width: 33%;
+  color: #646464;
+  font-size: 13px;
+  float: left;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  border-right: 1px solid #eee;
+}
+.X_header .list_nav .list_cat a:last-child{
+  border-right: none;
+}
+.X_header .list_nav .list_cat a .drop{
+  display: inline-block;
+  width: 13px;
+  height:7px;
+  background: url(../img/ico.png) no-repeat -66px -57px;
+  background-size: 91px auto;
+  margin-left: 5px;
+}
+
+
+
+/*listnav end*/
+
+
+.X_header .list_goods{
+  font-size: 12px;
+}
+.list_goods li{
+
+  border-bottom:1px solid #eee;
+}
+.list_goods .list_item{
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  -webkit-tap-highlight-color:transparent;
+  color: #646464;
+}
+
+@media screen and (min-width: 1200px) {
+  .list_goods .list_item .list_content{
+    width: 93%;
+    padding-top: 8px;
+    float: right;
+  }
+  .list_goods .list_item .list_pic{
+    width: 4%;
+    float: left;
+  }
+}
+/*在992 和1199 像素之间的屏幕里，中等屏幕，分辨率低的PC*/
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+ .list_goods .list_item .list_content{
+  width: 92%;
+  padding-top: 8px;
+  float: right;
+}
+.list_goods .list_item .list_pic{
+  width: 6%;
+  float: left;
+}
+}
+/*在768 和991 像素之间的屏幕里，小屏幕，主要是PAD*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+ .list_goods .list_item .list_content{
+  width: 90%;
+  padding-top: 8px;
+  float: right;
+}
+.list_goods .list_item .list_pic{
+  width: 8%;
+  float: left;
+}
+}
+/*在480 和767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .list_goods .list_item .list_content{
+    width: 83%;
+    padding-top: 8px;
+    float: right;
+  }
+  .list_goods .list_item .list_pic{
+    width: 14%;
+    float: left;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 479px){
+  .list_goods .list_item .list_content{
+    width: 78%;
+    padding-top: 8px;
+    float: right;
+  }
+  .list_goods .list_item .list_pic{
+    width: 19%;
+    float: left;
+  }
+}
+
+.list_goods .list_item .list_pic{
+  margin-right: 10px;
+  width: 66px;
+  height: 66px;
+  margin-top: 7px;
+  float: left;
+}
+.list_goods .list_item .list_pic img{
+  height: 66px;
+  width: 66px;
+  border-radius:3px;
+}
+
+
+.list_goods .list_item .list_content .name h3{
+  color: #323232;
+  margin-bottom: 2px;
+  font-size: 16px;
+  font-weight: 400;
+  vertical-align: top;
+}
+.list_goods .list_item .list_content{
+  position: relative;
+  margin-bottom: 6px;
+  height: 14px;
+
+}
+
+.list_goods .list_item .list_content .comment{
+  padding-top: 3px;
+}
+
+.list_goods .list_item .list_content .star{
+  margin-right: 10px;
+  display: inline-block;
+  width: 66px;
+  height: 12px;
+  background: url(../img/ico1.png) 0px -15px;
+  background-size: 86px auto;
+  vertical-align: middle;
+
+}
+.list_goods .list_item .list_content .intro{
+  color: #999;
+  padding-top: 10px;
+}
+.list_goods .list_item .list_content .type{
+  margin-left: 10px;
+}
+
+.list_goods .new_coupon{
+  margin-left: 86px;
+}
+
+.list_goods .new_coupon .coupon{
+  background-position: 0 0;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  display: block;
+  padding-right: 30px;
+  color: #333;
+  height: 40px;
+  line-height: 40px;
+  border-top:1px solid #eee;
+
+}
+
+.list_goods .new_coupon .coupon_tag{
+  position: absolute;
+  width: 15px;
+  height: 16px;
+  background:url(../img/ico2.png) no-repeat;
+  background-size: 115px auto;
+  padding-left: 2px;
+  padding-right: 6px;
+  display: inline-block;
+
+}
+.list_goods .new_coupon .juan{
+  background-position: -96px -23px;
+  margin-top: 12px;
+}
+.list_goods .new_coupon .tuan{
+  background-position: -33px -49px;
+  margin-top: 12px;
+}
+.list_goods .new_coupon .coupon_info{
+  font-size: 13px;
+  display: block;
+  padding-left: 23px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.list_goods .new_coupon .arrowent{
+  position: absolute;
+  right: 15px;
+  background-size: 8px 14px;
+  margin-top: -25px;
+  border: 2px solid #bbb;
+  transform: rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-bottom: none;
+  border-left: none;
+  -webkit-transform: rotate(45deg);
+}
+
+/*goods end*/
+
+.list_nav .second-nav{
+  font-size: 16px;
+  font-weight: 300;
+  color: #333;
+  line-height: 45px;
+}
+.list_nav .selector{
+  position: absolute;
+  left: 0;
+  top: 45px;
+  color: #323232;
+  width: 100%;
+  height: 315px;
+  font-size: 15px;
+  overflow-y: hidden;
+  background-color: #fff;
+  z-index: 300;;
+
+}
+
+.list_nav .second-nav .item{
+  float: left;
+  width: 50%;
+  text-align: center;
+  display: block;
+  height: 45px;
+  line-height: 45px;
+  color: #323232;
+  overflow: hidden;
+
+}
+
+
+.list_nav .second-nav .item.on{
+  border-bottom:2px solid orange;
+}
+.list_nav .selector .second-selector{
+  width: 100%;
+  background: #ccc;
+  height: 270px;
+  position: relative;
+  overflow: hidden;
+}
+.scrollbar-two{
+  position: absolute;
+  left: 90%;
+}
+.list_nav .selector .second-left{
+  height: 100%;
+  width: 45%;
+  background: #eee;
+  float: left;
+}
+
+.list_nav .selector .second-left li{
+  background: #eee;
+  height:45px;
+}
+.list_nav .selector .second-left .in{
+  background: #fff;
+}
+
+.list_nav .selector .second-right{
+  height: 100%;
+  width: 55%;
+  background: #fff;
+  position: absolute;
+  left: 45%;
+  padding-left: 15px;
+
+}
+.list_nav .selector .second-right .on{
+  border-bottom:2px #ff8400 solid;
+}
+
+.list_nav .selector .second-left p,.list_nav .selector .second-right p{
+  height: 45px;
+  line-height: 45px;
+  padding-left:15px;
+}
+
+.list_nav .selector .second-right li{
+  border-bottom:1px solid #eee;
+
+
+}
+
+footer { background: #eee; font-size: 12px; line-height: 30px; text-align: center; color: #ccc; }
+
+footer a{
+  text-decoration: none;
+ color: #999;
+ padding: 0 5px;
+}
+
