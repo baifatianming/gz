@@ -224,7 +224,7 @@ li{
 
 @media screen and (min-width: 320px) and (max-width: 479px){
   .list_goods .list_item .list_content{
-    width: 78%;
+    width: 74%;
     padding-top: 8px;
     float: right;
   }

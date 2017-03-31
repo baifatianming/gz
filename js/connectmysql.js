@@ -8,7 +8,7 @@ module.exports = {
 	get:function(data,_calback){
 		var client = mysql.createConnection({
 			user:'root',
-			password:'root'
+			password:''
 		});
 
 		client.connect(function(err){
