@@ -1,4 +1,4 @@
 var globle = angular.module('globleapp',[]);
 
-globle.value('url', 'http://10.3.135.43:88/');
+globle.value('url', 'http://localhost:88/');
 

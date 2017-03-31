@@ -4,7 +4,7 @@ var TEST_DATABASE = 'dazhong'; //数据库名称
 // var TEST_TABLE = `merchant`; //主页数据库表名
 
 var username = 'root';
-var password = 'root';
+var password = '';
 
 module.exports = {
 
