@@ -24,7 +24,7 @@
       <li class="clear" ng-repeat="pro in responseObj">
         <div class="commentLeft">
           <img ng-src='{{pro.iconimg}}'>
-          <div class="userLv"></div>
+          <div class="userLv" lv="{{pro.level}}"></div>
         </div>
         <div class="commentRight">
           <p class="username" ng-bind='pro.username'></p>
@@ -33,15 +33,15 @@
           <div class="goodcomment"></div>
           <p class="commentP" ng-bind="pro.context"></p>
           <div class='commentImg'>
-          <img src="./img/niuchi_comment01.jpg">
-          <img src="./img/niuchi_comment02.jpg">
-          <img src="./img/niuchi_comment03.jpg">
-          <img src="./img/niuchi_comment04.jpg">
-          <img src="./img/niuchi_comment05.jpg">
-          <img src="./img/niuchi_comment06.jpg">
-          <img src="./img/niuchi_comment07.jpg">
-          <img src="./img/niuchi_comment08.jpg">
-          <img src="./img/niuchi_comment09.jpg">
+          <img src="./img/niuchi_comment01.jpg" ng-click="magnify($event)">
+          <img src="./img/niuchi_comment02.jpg" ng-click="magnify($event)">
+          <img src="./img/niuchi_comment03.jpg" ng-click="magnify($event)">
+          <img src="./img/niuchi_comment04.jpg" ng-click="magnify($event)">
+          <img src="./img/niuchi_comment05.jpg" ng-click="magnify($event)">
+          <img src="./img/niuchi_comment06.jpg" ng-click="magnify($event)">
+          <img src="./img/niuchi_comment07.jpg" ng-click="magnify($event)">
+          <img src="./img/niuchi_comment08.jpg" ng-click="magnify($event)">
+          <img src="./img/niuchi_comment09.jpg" ng-click="magnify($event)">
         </div>
         </div>
       </li>
