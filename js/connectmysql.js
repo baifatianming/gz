@@ -3,12 +3,15 @@ var mysql = require('mysql');
 var TEST_DATABASE = 'dazhong'; //数据库名称
 // var TEST_TABLE = `merchant`; //主页数据库表名
 
+var username = 'root';
+var password = 'root';
+
 module.exports = {
 
 	get:function(data,_calback){
 		var client = mysql.createConnection({
-			user:'root',
-			password:'root'
+			user:username,
+			password:password
 		});
 
 		client.connect(function(err){
@@ -33,8 +36,8 @@ module.exports = {
 	insert:function(data,_calback){
 		// console.log(data.phone,data.password);
 		var client = mysql.createConnection({
-			user:'root',
-			password:'root'
+			user:username,
+			password:password
 		});
 
 		client.connect(function(err){

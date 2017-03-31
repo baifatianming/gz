@@ -1,0 +1,8 @@
+﻿
+条件:你首先要安装有node
+
+1. 先在跟目录下npm install;
+2. 在数据库执行: sql/createsqldata.sql 文件;
+3. 配置你的数据库登陆信息: js/connectmysql.js  文件;
+4. 更改 js/globle.js 的url 改为本机地址;
+5. 根目录下用执行: node serverlogin;
