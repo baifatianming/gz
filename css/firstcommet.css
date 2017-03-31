@@ -371,6 +371,7 @@
   background: rgba(0,0,0,0.5);
 }
 #imgShow{
+  width: 100%;
   position:fixed;
   top:50%;
   left:50%;
@@ -435,27 +436,49 @@
 }
 /*在768 和991 像素之间的屏幕里，小屏幕，主要是PAD*/
 @media screen and (min-width: 768px) and (max-width: 991px) {
- .commentLeft{
-  float: left;
-  width: 5%;
-  box-sizing: border-box;
-}
-.commentRight{
-  float: right;
-  width:92%;
-  box-sizing: border-box;
-}
-.commentRight .commentP{
-  width:99%;
-}
-.commentRight .commentImg>img{
-  width:32%;
-}
-.commentRight .time{
-  color:#999;
-  top:2%;
-  right:3%;
-}
+  .privilege>span {
+    font-size: 17px;
+    position: absolute;
+    left: 80px;
+  }
+  .privilege .privilegeCount{
+    font-size: 19px;
+  }
+  .privilegeTime{
+    top:46px;
+  }
+  .privilegeOnly{
+    top:74px;
+  }
+  .Aname{
+    font-size: 20px;
+  }
+  .privilegeMany{
+    font-size: 19px;
+  }
+  .privilege .introduce{
+    font-size: 20px;
+    left: 200px;
+  }
+  .privilege>img{
+    width: 80px;
+    height:75px;
+    left: 80px;
+    top: 20px;
+  }
+  .privilege .money1{
+    left: 250px;
+    top: 75px;
+  }
+  .privilege .money2{
+    left: 275px;
+    top: 66px;
+    font-size: 26px;
+  }
+  .privilege .money3{
+    left: 320px;
+    top: 75px;
+  }
 }
 /*在480 和767 像素之间的屏幕里，超小屏幕，主要是手机*/
 @media screen and (min-width: 480px) and (max-width: 767px) {
@@ -481,34 +504,41 @@
     height: 14%;
   }
   .privilege .introduce{
-    font-size: 10px;
-    max-width: 60%;
+    font-size: 13px;
+    max-width: 50%;
     top:10px;
   }
   .privilege .privilegeCount{
-    font-size: 10px;
-    top:10px;
+    font-size: 15px;
+    top:15px;
+  }
+  .privilege>span {
+    left: 65px;
   }
   .privilegeTime{
-    top:29px;
+    top:36px;
   }
   .privilegeOnly{
-    top:45px;
+    top:58px;
+  }
+  .privilegeMany{
+    font-size: 13px;
   }
   .privilege>span{
-    font-size:10px;
+    font-size:12px;
   }
   .privilege .money1{
-    top:47px;
+    top:50px;
   }
   .privilege .money2{
-    font-size:14px;
+    font-size:20px;
   }
   .privilege .money3{
-    top:47px;
+    top:50px;
+    left:180px;
   }
   .Aname{
-    font-size: 10px;
+    font-size: 13px;
   }
 }
 #elseLike{
