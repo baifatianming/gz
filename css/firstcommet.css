@@ -483,8 +483,8 @@
     top:10px;
   }
   .privilege .privilegeCount{
-  font-size: 10px;
-  top:10px;
+    font-size: 10px;
+    top:10px;
   }
   .privilegeTime{
     top:29px;
@@ -503,6 +503,9 @@
   }
   .privilege .money3{
     top:47px;
+  }
+  .Aname{
+    font-size: 10px;
   }
 }
 #elseLike{
