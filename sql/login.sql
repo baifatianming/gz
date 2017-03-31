@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-03-30 10:53:54
+Date: 2017-03-31 10:13:17
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,7 +24,7 @@ CREATE TABLE `login` (
   `phone` int(11) DEFAULT NULL COMMENT '手机号码',
   `password` varchar(255) DEFAULT NULL COMMENT '账号密码',
   PRIMARY KEY (`indexid`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of login
@@ -32,3 +32,5 @@ CREATE TABLE `login` (
 INSERT INTO `login` VALUES ('8', '111', '111');
 INSERT INTO `login` VALUES ('9', '222', '222');
 INSERT INTO `login` VALUES ('10', '444', '444');
+INSERT INTO `login` VALUES ('11', '213', '213');
+INSERT INTO `login` VALUES ('12', '213', '213');
