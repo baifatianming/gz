@@ -114,9 +114,11 @@ li{
 .list_header .list_type .list_center{
   width: 150px;
   margin: 0 auto;
-
 }
-
+.list_header .list_type .list_center a{
+    text-decoration:none;
+    -webkit-tap-highlight-color:transparent;
+}
 /*listheader end*/
 
 
