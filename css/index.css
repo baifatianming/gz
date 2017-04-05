@@ -1,55 +1,57 @@
 input, p, h1, h2, h3, h4 li, ul, body, a, img { padding: 0; margin: 0; list-style: none; border: none; }
 
-body { color: #666; }
+html { font-size: 625%; }
+
+body { color: #666; font-size: 0.16rem; }
 
 a { cursor: pointer; text-decoration: none; color: black; }
 
 .clear:after { content: ''; display: block; clear: both; }
 
-.top { min-width: 414px; width: 100%; height: 50px; line-height: 50px; color: white; background: red; position: fixed; z-index: 100; top: 0; }
-.top .left { margin-left: 10px; float: left; }
+.top { min-width: 3.2rem; width: 100%; height: 50px; line-height: 50px; color: white; background: red; position: fixed; z-index: 100; top: 0; }
+.top .left { box-sizing: border-box; width: 20%; padding-left: 5px; padding-right: 5px; float: left; }
 .top .left a { color: white; }
 .top .middle { float: left; width: 70%; position: relative; }
-.top .middle i { position: absolute; left: 10%; top: 18px; color: #ccc; }
-.top .middle .input { height: 30px; width: 75%; margin-left: 20px; margin-top: 10px; border-radius: 15px; float: left; text-indent: 15%; }
-.top .right { float: right; }
-.top .right a { width: 30px; height: 30px; margin-right: 20px; margin-top: 10px; float: right; background: url("../img/profile.png"); }
+.top .middle i { position: absolute; left: 3%; top: 18px; color: #ccc; }
+.top .middle .input { height: 30px; width: 95%; margin-top: 10px; border-radius: 15px; float: left; text-indent: 15%; }
+.top .right { float: right; box-sizing: border-box; padding-right: 5px; width: 10%; }
+.top .right a { width: 30px; height: 30px; margin-top: 10px; float: right; background: url("../img/profile.png"); }
 
-header { min-width: 414px; margin-top: 50px; height: 120px; width: 100%; background: url("../img/header.png"); }
+header { min-width: 320px; margin-top: 50px; height: 120px; width: 100%; background: url("../img/header.png"); }
 header > div { height: 40px; line-height: 40px; width: 60%; margin-top: 30px; margin-left: 25%; }
 header > div i { height: 100%; width: 40px; display: inline-block; background: url("../img/spirte.png") -450px 0; vertical-align: middle; border-radius: 5px; }
 header > div h3 { display: inline-block; margin-left: 10px; }
-header li { margin-top: 30px; padding-left: 25%; }
+header li { margin-top: 30px; display: flex; justify-content: space-around; flex-wrap: wrap; }
 header li a { text-align: center; width: 35%; height: 40px; line-height: 40px; display: inline-block; font-size: 14px; border-radius: 2px; }
-header li .num1 { border: 1px solid red; color: red; }
-header li .num2 { border: 1px solid red; margin-left: 10px; background: red; color: white; }
+header li .num1 { border: 1px solid red; color: red; margin-left: 10%; }
+header li .num2 { border: 1px solid red; margin-left: 10px; background: red; color: white; margin-right: 10%; }
 
-.nav { min-width: 414px; width: 100%; background: white; overflow: hidden; border-top: 2px solid #ccc; border-bottom: 2px solid #ccc; position: relative; }
+.nav { min-width: 320px; width: 100%; background: white; overflow: hidden; border-top: 2px solid #ccc; border-bottom: 2px solid #ccc; position: relative; }
 .nav > li { width: 300%; transition: 1s; position: relative; }
 .nav > li > div { float: left; width: 33.3%; margin-top: 10px; display: flex; justify-content: space-around; flex-wrap: wrap; }
-.nav > li > div a { width: 18%; display: inline-block; text-align: center; }
+.nav > li > div a { width: 18%; display: inline-block; text-align: center; margin-bottom: 5px; }
 .nav > li > div a img { width: 60%; }
 .nav > li > div a span { display: block; font-size: 14px; }
 .nav #btn { width: 60px; height: 20px; margin: auto; margin-top: 10px; }
 .nav #btn li { width: 10px; height: 10px; border-radius: 5px; background: #ccc; float: left; margin-right: 10px; text-align: center; line-height: 20px; }
 .nav .active { background: red !important; }
 
-.shift { min-width: 414px; height: 45px; width: 100%; margin: 10px 0; }
+.shift { min-width: 320px; height: 45px; width: 100%; margin: 10px 0; }
 .shift .left { width: 45px; height: 30px; float: left; }
 .shift .left a { display: inline-block; font-weight: bold; color: #f5734b; padding-right: 3px; border-right: 1px solid #ccc; }
-.shift .overflow { position: relative; overflow: hidden; width: 85%; height: 45px; margin-left: 10px; float: right; }
+.shift .overflow { position: relative; overflow: hidden; width: 80%; height: 45px; margin-left: 5px; float: right; }
 .shift .overflow li { width: 100%; position: absolute; }
 .shift .overflow li div { margin-bottom: 5px; }
-.shift .overflow li div a { width: 80%; float: left; font-size: 14px; }
+.shift .overflow li div a { width: 80%; float: left; font-size: 14px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
 .shift .overflow li div img { height: 40px; float: right; margin-right: 10px; margin-right: 10px; }
 
-.banner { min-width: 414px; padding: 10px 0; background: #ccc; }
+.banner { min-width: 320px; padding: 10px 0; background: #ccc; }
 .banner img { width: 100%; }
 
-.cutOff { min-width: 414px; display: flex; justify-content: space-around; flex-wrap: wrap; background: #ccc; }
+.cutOff { min-width: 320px; display: flex; justify-content: space-around; flex-wrap: wrap; background: #ccc; }
 .cutOff > div { box-sizing: border-box; height: 75px; width: 50%; padding: 5px 5px; margin-bottom: 10px; background: white; }
 .cutOff .common { border: 1px solid #ccc; }
-.cutOff .common li h3 { float: left; width: 50%; font-size: 16px; }
+.cutOff .common li h3 { float: left; width: 50%; font-size: 0.16rem; }
 .cutOff .common li p { float: left; line-height: 30px; font-size: 14px; }
 .cutOff .common li > a { float: right; margin-bottom: 30px; }
 .cutOff .common li > a img { width: 50px; }
@@ -62,7 +64,7 @@ header li .num2 { border: 1px solid red; margin-left: 10px; background: red; col
 .cutOff .common ul .right { background: #44d0cd; height: 50px; }
 .cutOff .common ul .right p { background: #22bab7; }
 
-.bargin { min-width: 414px; background: #ccc; padding-bottom: 20px; }
+.bargin { min-width: 320px; background: #ccc; padding-bottom: 20px; }
 .bargin div { background: white; padding-bottom: 20px; }
 .bargin div > li { height: 50px; line-height: 50px; text-align: center; }
 .bargin div > li h3 { float: left; color: red; margin-left: 20px; }
@@ -72,9 +74,9 @@ header li .num2 { border: 1px solid red; margin-left: 10px; background: red; col
 .bargin div > ul li img { width: 100%; }
 .bargin div > ul li p { font-size: 14px; margin-bottom: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .bargin div > ul li span, .bargin div > ul li del { display: block; float: left; font-size: 20px; height: 20px; line-height: 20px; color: red; }
-.bargin div > ul li del { color: #ccc; margin-left: 8px; }
+.bargin div > ul li del { color: #ccc; font-size: 12px; margin-left: 8px; }
 
-.guess { min-width: 414px; box-sizing: border-box; width: 100%; padding-left: 20px; font-size: 13px; }
+.guess { min-width: 320px; box-sizing: border-box; width: 100%; padding-left: 20px; font-size: 13px; }
 .guess > h3 { color: #ccc; height: 40px; line-height: 40px; }
 .guess li { width: 100%; height: 140px; margin-bottom: 10px; border-bottom: 1px solid #ccc; }
 .guess li > img { width: 25%; float: left; }
@@ -90,8 +92,11 @@ header li .num2 { border: 1px solid red; margin-left: 10px; background: red; col
 .guess .gift p { line-height: 20px; }
 .guess .gift a { padding: 4px 8px; background: red; border-radius: 2px; color: white; }
 
-footer { min-width: 414px; background: #ccc; font-size: 12px; line-height: 30px; text-align: center; }
+footer { min-width: 320px; background: #ccc; font-size: 12px; line-height: 30px; text-align: center; }
 
 .rightFixed { position: fixed; top: 80%; right: 0; width: 65px; height: 45px; background-image: url("../img/111spirte.png"); }
 
 .test { width: 100px; height: 100px; background: gray; position: fixed; bottom: 0px; right: 0; }
+
+@media (max-width: 380px) { .cutOff h3 a { font-size: 0.12rem; }
+  .cutOff p { font-size: 0.12rem; } }
