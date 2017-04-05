@@ -96,7 +96,11 @@ app.post('/firstComment', urlencodedParser, function(request, response){
 		response.send(res);
 	})
 });
-
+app.get('/goodsGroup',function(request,responce){
+  mysql.get({TableName:'goodsGroup'},function(res){
+    responce.send(res);
+  })
+})
 
 
 app.listen(88);

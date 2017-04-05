@@ -1,0 +1,28 @@
+input, p, h1, h2, h3, h4 li, ul, body, a, img { padding: 0; margin: 0; list-style: none; border: none; }
+
+html { font-size: 625%; }
+
+body { color: #666; font-size: 0.16rem; background: #f2f2f2; }
+
+a { cursor: pointer; text-decoration: none; color: black; }
+
+.clear:after { content: ''; display: block; clear: both; }
+
+header { height: 0.45rem; background: white; box-sizing: border-box; padding: 0.07rem; }
+header > a i { float: left; margin-top: 0.15rem; }
+header .mid { width: 30%; height: 0.3rem; margin: auto; border: 1px solid red; text-align: center; border-radius: 3px; }
+header .mid a { width: 0.7rem; height: 0.3rem; line-height: 0.3rem; color: #ff6633; float: left; width: 50%; }
+header .mid .domestic { background: #ff6633; color: white; }
+
+.k_search { position: relative; }
+.k_search i { position: absolute; top: 0.08rem; left: 32%; }
+.k_search input { display: block; width: 90%; height: 0.3rem; background: white; border-radius: 0.15rem; margin: auto; margin-top: 0.1rem; text-indent: 35%; }
+
+.k_locate { height: 0.4rem; line-height: 0.4rem; text-align: center; background: white; margin: 0.1rem 0; }
+
+.k_hot h3, .k_more h3, .k_A h3 { height: 0.2rem; line-height: 0.2rem; color: black; font-size: 0.16rem; margin-bottom: 0.1rem; margin-top: 0.1rem; }
+.k_hot table, .k_more table, .k_A table { background: white; border-collapse: collapse; width: 100%; }
+.k_hot table tr, .k_more table tr, .k_A table tr { text-align: center; height: 0.5rem; }
+.k_hot table tr td, .k_more table tr td, .k_A table tr td { border: 1px solid #ccc; }
+
+.k_more table tr td { width: 20%; }

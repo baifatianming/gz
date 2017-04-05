@@ -73,7 +73,6 @@ $(function(){
       observeParents: true
     });
 
-
     $('.second-right').on('click','li',function(event){
       $(this).addClass('on').siblings('li').removeClass('on');
     });
