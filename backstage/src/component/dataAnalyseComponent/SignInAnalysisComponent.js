@@ -1,6 +1,7 @@
 var React = require('react');
 var $ = require('jquery');
 var baseUrl=require('../../../js/baseUrl.js');
+var style = require('./SignInAnalysisComponent.scss');
 
 var SignInAnalysisComponent = React.createClass({
 	getInitialState:function(){
@@ -16,7 +17,6 @@ var SignInAnalysisComponent = React.createClass({
 		})
 		.done(function(success) {
 			// console.log(success);//返回了数据的数组
-
 			this.setState({
 				arr:success
 			})
@@ -30,11 +30,6 @@ var SignInAnalysisComponent = React.createClass({
 	},
 	render:function() {
 		// console.log(this.state);//当前组件对象
-		var tableStyle={
-			width:"200px",
-			margin:"auto",
-			border:"1px solid black"
-		}
 		return (
 				<div className="signIn" >
 					<h1>注册用户统计</h1>
@@ -47,7 +42,8 @@ var SignInAnalysisComponent = React.createClass({
 					<span>第一个注册的用户名</span>
 					<span>{this.state.arr[0].phone}</span>
 					<br/><hr/>
-					<table style={tableStyle}>
+					<span>所有用户如下：</span><br/>
+					<table >
 							<tr><td>用户名</td><td>密码</td></tr>
 						{this.state.arr.map(function(item,index){
 							return <tr><td>{item.phone}</td><td>{item.password}</td></tr>

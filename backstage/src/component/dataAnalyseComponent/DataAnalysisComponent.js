@@ -3,6 +3,7 @@ var ReactRouter = require("react-router");
 var DataAnalysisComponentCss = require("./DataAnalysisComponent.css");
 var { Router, Route, hashHistory, Link } = ReactRouter;
 
+	console.log(DataAnalysisComponentCss);
 var DataAnalysisComponent = React.createClass({
 	render() {
 		// return <div>电影</div>;
