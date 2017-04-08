@@ -37,7 +37,7 @@ app.use(cookieParser());
 app.use(session({
     secret: '12345', //用来对session数据进行加密的字符串.这个属性值为必须指定的属性
     name: 'goodcar', //这里的name值得是cookie的name，默认cookie的name是：connect.sid
-    cookie: { maxAge: 80000 }, //设置maxAge是80000ms，即80s后session和相应的cookie失效过期
+    cookie: { maxAge: 80000000 }, //设置maxAge是80000ms，即80s后session和相应的cookie失效过期
     resave: false,
     saveUninitialized: true,
 }))
@@ -79,7 +79,21 @@ app.post('/check', function(request, response) {
     // console.log(response)
     console.log(111);
     console.log(request.session.name);
-    response.send(JSON.stringify({"name":request.session.name}));
+    if(request.session.name){
+        response.send(JSON.stringify({"name":request.session.name}));
+    }else{
+        response.send(false);
+    }
+
+})
+
+app.post('/findUser', function(request, response) {
+    console.log("findUser");
+    mysql.findUser({ TableName: 'login' }, function(res) {
+                response.send(JSON.stringify(res));
+            
+
+        })
 
 })
 

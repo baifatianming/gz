@@ -1,4 +1,6 @@
 var React = require('react');
+var $ = require('jquery');
+var baseUrl=require('../js/baseUrl.js');
 var ReactDOM = require('react-dom');
 var MainComponent = require('./component/main/mainComponent.js');
 var LoginComponent = require('./component/login/loginComponent.js');
@@ -15,7 +17,7 @@ ReactDOM.render(
 		<Route path='/' component={MainComponent} />
 		<Route path='/login' component={LoginComponent}/>
 		<Route path='/edituser/:userid' component={LoginComponent}/>
-		<Route path='/dataAnalysis' component={DataAnalysisComponent} >
+		<Route path='/dataAnalysis' component={DataAnalysisComponent} onEnter={enterFun}>
 			<IndexRoute component={SignInAnalysisComponent} />
 			<Route path="sell" component={SellComponent} />
 			<Route path="active" component={ActiveUserComponent} />
@@ -26,9 +28,34 @@ ReactDOM.render(
 	document.getElementById('content')
 )
 
-function loginFilter(nextState, replace, next){
+function enterFun(nextState, replace, next){
+
+	//判断是当前用户是否有权限，如果没有，则跳车到 login
+	$.ajax({
+		url: baseUrl+'/check',
+		type: 'post',
+		dataType: 'json',
+	})
+	.done(function(success) {
+		if(success==false){
+			//没有权限登录，跳转到登录界面
+			window.location.href='http://localhost:99/#/login';
+			return false;
+		}
+	})
+	.fail(function(error) {
+		console.log("error");
+		
+	})
+	.always(function() {
+		console.log("complete");
+	});
+	//进入数据统计分析时清除问候语
+	if($('.newdiv')){
+		$('.newdiv').remove();
+	}
+	next();
 	//$.post
 	//判断当前用户是否已登陆或者是否有权限访问此路由
 	// replace('login');
-	// next();
 }

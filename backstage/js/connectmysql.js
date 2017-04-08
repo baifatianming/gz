@@ -1,6 +1,7 @@
 var mysql = require('mysql');
 
 var TEST_DATABASE = 'management'; //数据库名称
+var TEST_DATABASE1 = 'dazhong'; //数据库名称
 // var TEST_TABLE = `merchant`; //主页数据库表名
 
 var username = 'root';
@@ -21,6 +22,30 @@ module.exports = {
 		});
 
 		client.query('use '+TEST_DATABASE );
+		client.query('SELECT * FROM '+ data.TableName,function(err,result,fields){
+			if(err){
+				_calback(err);
+				return;
+			}else{
+				_calback(result);
+				// console.log(result);
+			}
+		});
+		client.end();
+	},
+	findUser:function(data,_calback){
+		var client = mysql.createConnection({
+			user:username,
+			password:password
+		});
+
+		client.connect(function(err){
+			if(err){
+				return;
+			}
+		});
+
+		client.query('use '+TEST_DATABASE1 );
 		client.query('SELECT * FROM '+ data.TableName,function(err,result,fields){
 			if(err){
 				_calback(err);

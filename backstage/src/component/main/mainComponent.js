@@ -13,14 +13,21 @@ var MainComponent = React.createClass({
 			dataType: 'json',
 		})
 		.done(function(success) {
-			console.log("success");
+			console.log(success);
 			//有权限登录，正常访问路由
-			$("<div>'你好'"+success+"</div>").appendTo('body');
+			if($('.newdiv')){
+				$('.newdiv').remove();
+			}
+			if(success==false){
+				//没有权限登录，跳转到登录界面
+				window.location.href='http://localhost:99/#/login';
+				return false;
+			}
+			$("<div class='newdiv'>'你好'"+success.name+"</div>").appendTo('body');
 		})
 		.fail(function(error) {
 			console.log("error");
-			//没有权限登录，跳转到登录界面
-			window.location.href='http://localhost:99/#/login';
+			
 		})
 		.always(function() {
 			console.log("complete");
