@@ -171,8 +171,27 @@
   border-bottom: 1px solid #f0f0f0;
   box-sizing: border-box;
 }
-#pri1{
+.stairs{
   margin-top:10px;
+  box-sizing: border-box;
+  width: 100%;
+  background: white;
+  padding:0 10px;
+  border-bottom:1px solid #f0f0f0;
+}
+.stairsActive{
+  color: red;
+  border-bottom: 2px solid red;
+}
+.stairs>span{
+  display: inline-block;
+  height:40px;
+  line-height: 40px;
+  width: 32%;
+  text-align: center;
+}
+#pri1{
+  /*margin-top:10px;*/
 }
 #pri2{
   margin-bottom:10px;

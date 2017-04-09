@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname,'/')));
 app.post("/login",urlencodedParser,function(req,res){
 
 	mysql.insert({phone:req.body.phone,password:req.body.psw},function(response){
-		console.log(response);
+		// console.log(response);
 		// console.log(arguments);
 		if(response.affectedRows == 1){
 			res.send('true');
@@ -74,11 +74,11 @@ app.get('/detail',function(request,response){
 
 
 // 商品列表页面
-app.get('/goodslist',function(request,responce){
+app.get('/goodslist',function(request,response){
   // console.log(responce)
 	mysql.get({TableName:'merchant where groups="true"'},function(res){
 	  	// console.log(res);
-	  	responce.send(res);
+	  	response.send(res);
 	})
 })
 
@@ -102,6 +102,23 @@ app.get('/goodsGroup',function(request,responce){
   })
 })
 
+//购物车
+app.post('/shoppingCar',function(request,responce){
+  mysql.get({TableName:'goods'},function(res){
+    responce.send(res);
+  })
+})
+
+//订单
+app.post('/money',urlencodedParser,function(request,response){
+  mysql.insert1({shopingId:request.body.shopingId,name:request.body.name,number:request.body.number,money:request.body.money,phoneNum:request.body.phoneNum},function(response){
+    console.log(request.body)
+    console.log(typeof parseInt( request.body.shoppingId));
+
+  });
+
+  response.send('123');
+})
 
 app.listen(88);
 

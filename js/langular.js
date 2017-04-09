@@ -15,6 +15,7 @@ myApp.controller('myController',['$scope','$http','url',function($scope,$http,ur
 		}).success(function(res){
 			if(res == 'true'){
 				console.log(res);
+				document.cookie="phone="+$scope.phone;
 				location.href = "./index.html";
 			}else{
 				console.log(res);

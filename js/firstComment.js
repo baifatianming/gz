@@ -28,11 +28,7 @@ myapp.controller('myController',['$scope','$http','mask','url',function($scope,$
       }
     }
     $scope.responseObj = obj;
-    console.log(obj);
-    console.log(obj[0].start);
-
     star = obj[0].start;
-    console.log(star);
     switch(star)
     {
       case 0:
@@ -88,5 +84,23 @@ myapp.controller('myController',['$scope','$http','mask','url',function($scope,$
       });
     },50);
 
+    $(".stairs span").click(function(){
+      $(".stairs span").removeClass();
+      $(this).addClass("stairsActive");
+      console.log($(this));
+    })
+    $(window).scroll(function(){
+      var divHeight = $(".stairs").offset().top;
+      var nextDivHeight = $(".privilege").eq(0).offset().top;
+      var divInnerHeight = $(".stairs").outerHeight();
+      var doHeight = $(document).scrollTop();
+      if( doHeight>divHeight ){
+        $(".stairs").css({"position":"fixed","top":0,"margin":0,"z-index":1000})
+      }else if( divHeight<=(nextDivHeight-divInnerHeight )){
+        console.log(1);
+        $(".stairs").css({"postion":"none","margin-top":"10px"});
+      }
+      // console.log($(".stairs").offset());
+    })
   })
 }])

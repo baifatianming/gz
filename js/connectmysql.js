@@ -33,7 +33,7 @@ module.exports = {
 		client.end();
 	},
 
-	insert:function(data,_calback){
+	insert:function(data,_calback,tablename){
 		// console.log(data.phone,data.password);
 		var client = mysql.createConnection({
 			user:username,
@@ -59,7 +59,35 @@ module.exports = {
 			}
 		});
 		client.end();
-	}
+	},
+
+  insert1:function(data,_calback){
+    // console.log(data.phone,data.password);
+    var client = mysql.createConnection({
+      user:username,
+      password:password
+    });
+
+    client.connect(function(err){
+      if(err){
+        console.log(err);
+        return;
+      }
+    });
+
+    client.query('use '+TEST_DATABASE );
+    client.query(`INSERT INTO shopingcar(shopingId,userName,number,money,phoneNum) VALUES (${data.shopingId},${data.name},${data.number},${data.money},${data.phoneNum})`,function(err,result,fields){
+      if(err){
+        _calback(err);
+        console.log(err);
+        return;
+      }else{
+        _calback(result);
+        console.log(result);
+      }
+    });
+    client.end();
+  }
 
 }
 
