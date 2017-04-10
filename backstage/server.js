@@ -97,4 +97,10 @@ app.post('/findUser', function(request, response) {
 
 })
 
+app.get('/goods',function(request,responce){
+    mysql.findUser({TableName:'merchant'},function(res){
+        responce.send(res);
+    })
+})
+
 app.listen(99);

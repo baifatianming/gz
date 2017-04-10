@@ -1,0 +1,1 @@
+1、新建management数据库，导入sql文件夹的supermanager.sql文件

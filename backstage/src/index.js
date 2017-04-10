@@ -9,12 +9,14 @@ var SignInAnalysisComponent = require('./component/dataAnalyseComponent/SignInAn
 var SellComponent = require('./component/dataAnalyseComponent/SellComponent.js');
 var ActiveUserComponent = require('./component/dataAnalyseComponent/ActiveUserComponent.js');
 var OtherComponent = require('./component/dataAnalyseComponent/OtherComponent.js');
-
+var GoodsComponent = require('./component/goods/goodsComponent.js');
 var {Router, Route, hashHistory, Link, IndexRoute, browserHistory} = require('react-router');
 
 ReactDOM.render(
 	<Router history={hashHistory}>
-		<Route path='/' component={MainComponent} />
+		<Route path='/' component={MainComponent} >
+			<Route path='goods' component={GoodsComponent}/>
+		</Route>
 		<Route path='/login' component={LoginComponent}/>
 		<Route path='/edituser/:userid' component={LoginComponent}/>
 		<Route path='/dataAnalysis' component={DataAnalysisComponent} onEnter={enterFun}>

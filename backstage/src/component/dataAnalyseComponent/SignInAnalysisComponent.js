@@ -1,7 +1,7 @@
 var React = require('react');
 var $ = require('jquery');
 var baseUrl=require('../../../js/baseUrl.js');
-var style = require('./SignInAnalysisComponent.scss');
+// var style = require('./SignInAnalysisComponent.scss');
 
 var SignInAnalysisComponent = React.createClass({
 	getInitialState:function(){
