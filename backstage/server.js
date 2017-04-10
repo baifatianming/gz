@@ -59,7 +59,7 @@ app.use(session({
 
 // 登陆页面
 app.post("/login", urlencodedParser, function(request, response) {
-    
+
     //先检查数据库是否有匹配用户
     //如果有，设置session
     mysql.get({ TableName: 'supermanager' }, function(res) {
@@ -91,10 +91,15 @@ app.post('/findUser', function(request, response) {
     console.log("findUser");
     mysql.findUser({ TableName: 'login' }, function(res) {
                 response.send(JSON.stringify(res));
-            
+
 
         })
 
+});
+app.get('/goods',function(request,responce){
+    mysql.findUser({TableName:'merchant'},function(res){
+        responce.send(res);
+    })
 })
 
 app.listen(99);
