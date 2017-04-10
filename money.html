@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="css/public.css">
+  <link rel="stylesheet" type="text/css" href="css/money.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery.spinner.css">
+  <script src="js/jquery-1.12.3.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/globle.js"></script>
+  <script src="js/cookiebase.js"></script>
+  <script src="js/money.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+  <div id="header">
+    <div id="gobackBtn">
+      <a href="./shoppingCar.html?shoppingId={{idNum}}">
+       <i class="goback"></i>
+     </a>
+   </div>
+   <span id="listStyle">提交订单</span>
+ </div>
+
+ <div class="Count">
+   <div class="CountFirst" class="clear">
+    <span>数量</span>
+    <div>
+      <button id="add">+</button>
+      <span id="number">1</span>
+      <button id="min">-</button>
+    </div>
+  </div>
+  <div class="clear">
+    <span>小计</span>
+    <span class="firstMoney">￥99</span>
+  </div>
+</div>
+
+<div class="Count">
+ <div class="CountFirst" class="clear">
+  <span>现金券/抵用券/优惠码</span>
+  <i class="Countgo"></i>
+</div>
+<div class="clear">
+  <span>订单合计</span>
+  <span class="firstMoney lastMoney"></span>
+</div>
+</div>
+
+<div class="phone clear">
+  <span>手机号码</span>
+  <span class="phoneNum"></span>
+  <i class="Countgo"></i>
+</div>
+
+<div id="safeguard" class="clear">
+  <span><i class="success"></i>随时退</span>
+  <span><i class="success"></i>过期退</span>
+  <span><i class="success"></i>免预约</span>
+</div>
+
+
+<div id="LastButtm">
+  <span id="submitAll">提交订单</span>
+</div>
+</body>
+<script>
+</script>
+</html>

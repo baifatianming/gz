@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="css/public.css">
+  <link rel="stylesheet" type="text/css" href="css/shopoingCar.css">
+  <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+  <script src="js/swiper.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/globle.js"></script>
+  <script src="js/shoppingCar.js"></script>
+</head>
+<body ng-app="myApp" ng-controller='myController'>
+ <div id="header">
+  <div id="gobackBtn">
+    <a href="./firstComment.html?shopingId=11">
+     <i class="goback"></i>
+   </a>
+ </div>
+ <i id="shareBtn"></i>
+ <i id="searchBtn"></i>
+</div>
+
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <img class="swiper-slide" ng-repeat="num in responseObj" ng-src="{{num.src}}">
+  </div>
+</div>
+
+<div id="floatIn">
+  <h3 ng-bind="responseObj[0].name"></h3>
+  <p>仅售9.9元！价值23元的霸王套餐 马来拉茶+鸡蛋仔9.9元，建议单人使用，提供免费WIFI<p>
+  </div>
+
+  <div id="safeguard" class="clear">
+    <span><i class="success"></i>随时退</span>
+    <span><i class="success"></i>过期退</span>
+    <span><i class="success"></i>免预约</span>
+    <span><i class="success1"></i>已售89</span>
+  </div>
+
+  <div id="purchase">
+    <p>套餐内容</p>
+    <h5>套餐</h5>
+    <div class="clear">
+      <span>马来拉茶</span>
+      <span class="purchaseMany">(1份)</span>
+      <span class="purchaseMoney">￥13</span>
+    </div>
+    <div class="clear">
+      <span>鸡蛋仔</span>
+      <span class="purchaseMany">(1份)</span>
+      <span class="purchaseMoney">￥10</span>
+    </div>
+    <div>
+      <i class="purchasemeg"></i>
+      <span>免费提供餐巾纸</span>
+    </div>
+    <div class="clear">
+      <span>查看图文详情</span>
+      <i class="purchaseGo"></i>
+    </div>
+  </div>
+
+  <div id="purchaseKnow">
+    <p>购买须知</p>
+    <div>
+      <h5>有效期:</h5>
+      <p>2017.2.17 至 2017.5.16(周末、法定节假日通用)</p>
+    </div>
+    <div>
+      <h5>使用时间:</h5>
+      <p>10:00-22:00</p>
+    </div>
+    <div>
+      <h5>使用规则</h5>
+      <ul>
+        <li>无需预约，消费高峰期时可能需要等位</li>
+        <li>每人最多购买1张<br/>每张没团卷建议1人使用</li>
+        <li>店内无包间</li>
+        <li>堂食外带均可，可免费打包</li>
+        <li>团购用户不可同时享受商家其他优惠</li>
+        <li>提供免费WIFI</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="purchaseAdress">
+    <div>
+      <h4 ng-bind="responseObj[0].name"></h4>
+      <span class="purchaseStar"></span>
+      <span ng-bind="responseObj[0].describe"><i class="purchaseSize"></i></span>
+    </div>
+    <i class="phoneCall"></i>
+  </div>
+
+  <div class="recommendTop">
+    <a href="./comment.html?shopingId={{responseObj[0].shopingId}}">
+      <span class="recommendSpan">网友评论</span>
+      <i class="Ago"></i>
+    </a>
+  </div>
+  <comment></comment>
+
+  <div class="elseRecom">
+    <div class="elseTop">
+      <h4>爽牛满 爽腩鲜牛肉火锅(太古仓店)</h4>
+      <span class="elseStar"></span>
+      <span class="elseSize">￥85/每人</span>
+      <span class="elseSize">海珠区</span>
+      <span class="elseSize">火锅</span>
+      <i></i>
+    </div>
+    <img src="./img/else.jpg">
+    <span class="elseiro">午时宵夜双人套餐</span>
+    <span class="money4">￥</span>
+    <span class="money5">99</span>
+    <span class="money6">￥138</span>
+    <span class="elseMany">已售75</span>
+  </div>
+  <div class="elseRecom">
+    <div class="elseTop">
+      <h4>爽牛满 爽腩鲜牛肉火锅(太古仓店)</h4>
+      <span class="elseStar"></span>
+      <span class="elseSize">￥85/每人</span>
+      <span class="elseSize">海珠区</span>
+      <span class="elseSize">火锅</span>
+      <i></i>
+    </div>
+    <img src="./img/else.jpg">
+    <span class="elseiro">午时宵夜双人套餐</span>
+    <span class="money4">￥</span>
+    <span class="money5">99</span>
+    <span class="money6">￥138</span>
+    <span class="elseMany">已售75</span>
+  </div>
+  <div class="elseRecom">
+    <div class="elseTop">
+      <h4>爽牛满 爽腩鲜牛肉火锅(太古仓店)</h4>
+      <span class="elseStar"></span>
+      <span class="elseSize">￥85/每人</span>
+      <span class="elseSize">海珠区</span>
+      <span class="elseSize">火锅</span>
+      <i></i>
+    </div>
+    <img src="./img/else.jpg">
+    <span class="elseiro">午时宵夜双人套餐</span>
+    <span class="money4">￥</span>
+    <span class="money5">99</span>
+    <span class="money6">￥138</span>
+    <span class="elseMany">已售75</span>
+  </div>
+
+  <div id="purchaseBottom" class="clear">
+    <span>￥9.9</span>
+    <span>￥23</span>
+    <span><a href="./money.html?shoppingId={{responseObj[0].shopingId}}">立即抢购</a></span>
+  </div>
+  <div id="Last"></div>
+</body>
+<script>
+
+</script>
+</html>
