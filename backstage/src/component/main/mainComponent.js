@@ -50,7 +50,7 @@ var MainComponent = React.createClass({
 							<li className="list-group-item"><Link to="#page6" >7、超级用户管理</Link></li>
 						</ul>
 					</div>
-					<div className="dk-content" data-ui-view="">{this.props.children}</div>
+					<div>{this.props.children}</div>
 				</div>
 				<div className="dk-footer">@wwwwwwwwww</div>
 			</div>

@@ -57,6 +57,7 @@ app.use(session({
 
 
 
+// 柯11111111111111111111111111111111111111111111111111111111111
 // 登陆页面
 app.post("/login", urlencodedParser, function(request, response) {
     
@@ -97,6 +98,17 @@ app.post('/findUser', function(request, response) {
 
 })
 
+app.post('/sell', function(request, response) {
+    console.log("sell");
+    mysql.sell({ TableName: 'shopingcar' }, function(res) {
+                response.send(JSON.stringify(res));
+        })
+
+})
+
+
+
+//肖1111111111111111111111111111111111111111111111111111
 app.get('/goods',function(request,responce){
     mysql.findUser({TableName:'merchant'},function(res){
         responce.send(res);

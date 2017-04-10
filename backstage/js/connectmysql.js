@@ -58,6 +58,30 @@ module.exports = {
 		client.end();
 	},
 
+	sell:function(data,_calback){
+		var client = mysql.createConnection({
+			user:username,
+			password:password
+		});
+
+		client.connect(function(err){
+			if(err){
+				return;
+			}
+		});
+
+		client.query('use '+TEST_DATABASE1 );
+		client.query('SELECT * FROM '+ data.TableName,function(err,result,fields){
+			if(err){
+				_calback(err);
+				return;
+			}else{
+				_calback(result);
+				// console.log(result);
+			}
+		});
+		client.end();
+	},
 	insert:function(data,_calback){
 		// console.log(data.phone,data.password);
 		var client = mysql.createConnection({

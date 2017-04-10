@@ -26,6 +26,7 @@ ReactDOM.render(
 			<Route path="other" component={OtherComponent} />
 			<Route path="signin" component={SignInAnalysisComponent} />
 		</Route>
+		
 	</Router>,
 	document.getElementById('content')
 )
