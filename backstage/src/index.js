@@ -16,17 +16,15 @@ ReactDOM.render(
 	<Router history={hashHistory}>
 		<Route path='/' component={MainComponent} >
 			<Route path='goods' component={GoodsComponent}/>
+			<Route path='dataAnalysis' component={DataAnalysisComponent} onEnter={enterFun}>
+				<IndexRoute component={SignInAnalysisComponent} />
+				<Route path="sell" component={SellComponent} />
+				<Route path="other" component={OtherComponent} />
+				<Route path="signin" component={SignInAnalysisComponent} />
+			</Route>
 		</Route>
 		<Route path='/login' component={LoginComponent}/>
 		<Route path='/edituser/:userid' component={LoginComponent}/>
-		<Route path='/dataAnalysis' component={DataAnalysisComponent} onEnter={enterFun}>
-			<IndexRoute component={SignInAnalysisComponent} />
-			<Route path="sell" component={SellComponent} />
-			<Route path="active" component={ActiveUserComponent} />
-			<Route path="other" component={OtherComponent} />
-			<Route path="signin" component={SignInAnalysisComponent} />
-		</Route>
-		
 	</Router>,
 	document.getElementById('content')
 )

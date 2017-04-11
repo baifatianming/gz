@@ -36,9 +36,6 @@ var SignInAnalysisComponent = React.createClass({
 					<span>总用户:</span>
 					<span>{this.state.arr.length}</span>
 					<br/><hr/>
-					<span>注册时间</span>
-					<span>20170404</span>
-					<br/><hr/>
 					<span>第一个注册的用户名</span>
 					<span>{this.state.arr[0].phone}</span>
 					<br/><hr/>

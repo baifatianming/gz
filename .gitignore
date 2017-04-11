@@ -2,3 +2,4 @@
 /scss
 /backstage/node_modules
 /backstage/src/component/dataAnalyseComponent/SignInAnalysisComponent.scss
+/backstage/js/getData.js
