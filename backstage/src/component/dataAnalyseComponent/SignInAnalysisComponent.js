@@ -16,9 +16,21 @@ var SignInAnalysisComponent = React.createClass({
 			dataType: 'json',
 		})
 		.done(function(success) {
-			// console.log(success);//返回了数据的数组
+			// console.log(typeof success);//返回了数据的数组 object
+
+			var userArr=[];
+			var userArrphoneNum=[];
+			userArr.push( success[0] );
+			userArrphoneNum.push( success[0].phone );
+			for(var i=1;i<success.length;i++){
+				if(userArrphoneNum.indexOf( success[i].phone )<0){
+					userArr.push( success[i] );
+					userArrphoneNum.push( success[i].phone );
+				}
+			}
+			// console.log(userArr);//得到不重复的用户名
 			this.setState({
-				arr:success
+				arr:userArr
 			})
 		}.bind(this))
 		.fail(function() {
@@ -29,7 +41,7 @@ var SignInAnalysisComponent = React.createClass({
 		});
 	},
 	render:function() {
-		console.log(this.state.arr);//当前组件对象
+		// console.log(this.state.arr);//当前组件对象
 		return (
 				<div className="signIn" >
 					<h1>注册用户统计</h1>

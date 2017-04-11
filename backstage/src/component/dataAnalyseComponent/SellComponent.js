@@ -6,7 +6,7 @@ var SellComponent = React.createClass({
 	
 	getInitialState:function(){
 		return {
-			arr:[[{}],[{}]],
+			arr:[[{}],[{}],[]],
 			activeUser:function(){
 				console.log(1111)
 			},
@@ -43,6 +43,7 @@ var SellComponent = React.createClass({
 			// console.log(shopArr)//得到所有不重复的店名
 
 			var allUserMesg=[];
+			var vipUser=[];
 			for(var k=0;k<userArr.length;k++){
 				var obj={};
 				obj.username=userArr[k];
@@ -53,10 +54,16 @@ var SellComponent = React.createClass({
 					if(obj.username==success[j].phoneNum){
 						obj.moneyCount+=success[j].money;
 						obj.buyCount+=success[j].number;
-						obj.store.push( success[j].shopingId );
+						if(obj.store.indexOf(success[j].shopingId)<0){
+							obj.store.push( success[j].shopingId );
+						}
 					}
 				}
 				allUserMesg.push(obj);
+				//求优质用户*******
+				if(obj.moneyCount>=1500){
+					vipUser.push(obj.username);
+				}
 
 			}
 			// console.log(allUserMesg)//得到所有用户的消费总金额，去过的店铺，交易次数
@@ -81,11 +88,13 @@ var SellComponent = React.createClass({
 			// console.log(allShopMesg)//得到所有店铺的收入金额，顾客数量，交易次数
 
 			// 设置信息
-			var allMsg=[allUserMesg,allShopMesg];
+			var allMsg=[allUserMesg,allShopMesg,vipUser];
+
 			this.setState({
 				arr:allMsg
 			})
-			// console.log(this.state.arr);
+			// console.log(typeof this.state.arr[0]);
+			// console.log(typeof this.state.arr[2]);
 			this.state.activeUser()
 
 		}.bind(this))
@@ -111,8 +120,11 @@ var SellComponent = React.createClass({
 					</table>
 					
 					<h1>活跃用户统计</h1>
-					<div>消费超过1000元的用户{}
-						<span>用户名:</span>
+					<div>
+						<h3>消费超过1000元的用户:</h3>
+						{this.state.arr[2].map(function(item,index){
+							return <span>{index+1}：{item}，</span>
+						})}
 					</div>
 					<br/><hr/>
 
@@ -135,3 +147,7 @@ module.exports = SellComponent;
 // 		return <tr><td>{item.username}</td><td>{item.buyCount}</td><td>{item.store.map(function(item){return <span>item</span>})}</td></tr>
 // 	})}
 // </table>
+
+// {this.state.arr[2].map(function(item,index){
+// 	return <span>用户名:{item}</span>
+// })}
