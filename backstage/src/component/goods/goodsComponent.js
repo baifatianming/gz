@@ -4,34 +4,44 @@ var style = require('./goodsComponent.css');
 var goodsAction = require('../../action/goodsAction.js');
 var goodsStore = require('../../stores/goodsStore.js')
 
-var goodsComponent = React.createClass({
+
+
+var GoodsComponent = React.createClass({
   getInitialState: function() {
         return {
           _response:[]
         };
     },
-  goodsAdd:function(){
-   goodsAction.Mask('show');
-  },
-  componentDidMount: function() {
+  componentWillMount: function() {
         $.get('http://localhost:99/goods', function(_response){
-          console.log(1);
             this.setState({
               _response:_response
             })
         }.bind(this));
-    }
+    },
+  goodsAdd:function(){
+    goodsAction.add('add')
+  },
+  getSwordCount:function(){
+
+  }
   ,render:function(){
-    console.log(2)
     var array = [];
     for(var key in this.state._response[0]){
-      array.push(key)
+      array.push(key);
+      array.splice(8)
+
     }
     return(
       <div>
-        <span className = "goods-button clear" onClick = {this.goodsAdd}>增加</span>
+        <div className="buttonlist">
+          <span className = "goods-button clear" onClick={this.goodsAdd}>增加</span>
+          <span className = "goods-button clear" >增加</span>
+          <span className = "goods-button clear" >增加</span>
+          <span className = "goods-button clear" >增加</span>
+        </div>
         <div  className="goodslist">
-          <table>
+          <table className="table table-bordered table-striped">
             <thead>
               {array.map(function(item,index){
                 return <th>{item}</th>
@@ -58,4 +68,6 @@ var goodsComponent = React.createClass({
   }
 });
 
-module.exports = goodsComponent;
+
+
+module.exports = GoodsComponent;
