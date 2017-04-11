@@ -31,7 +31,7 @@ var goodsComponent = React.createClass({
       <div>
         <span className = "goods-button clear" onClick = {this.goodsAdd}>增加</span>
         <div  className="goodslist">
-          <table className='goods'>
+          <table>
             <thead>
               {array.map(function(item,index){
                 return <th>{item}</th>
