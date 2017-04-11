@@ -29,7 +29,7 @@ var SignInAnalysisComponent = React.createClass({
 		});
 	},
 	render:function() {
-		// console.log(this.state);//当前组件对象
+		console.log(this.state.arr);//当前组件对象
 		return (
 				<div className="signIn" >
 					<h1>注册用户统计</h1>

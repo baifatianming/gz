@@ -4,7 +4,7 @@ var baseUrl=require('../../../js/baseUrl.js');
 var SellComponent = React.createClass({
 	getInitialState:function(){
 		return {
-			arr:['hallo kitty']
+			arr:[]
 		}
 	},
 	componentDidMount:function(){
@@ -14,18 +14,76 @@ var SellComponent = React.createClass({
 			dataType: 'json',
 		})
 		.done(function(success) {
-			console.log(success);//返回了数据的数组
-			// this.setState({
-			// 	arr:success
-			// })
+			// console.log(success);//返回了数据的数组
 			// 整理查找到的数据
-			var obj={}
+			var userArr=[],shopArr=[],arr1=[],arr2=[];
 			for(var i=0;i<success.length;i++){
-				obj.name=success[i].phoneNum;
-				obj.count=success[i].money
+				if(i==0){
+					userArr.push(success[i].phoneNum);
+					shopArr.push(success[i].shopingId);
+					arr1.push(success[i].phoneNum);
+					arr2.push(success[i].shopingId);
+				}
+				if(arr1.indexOf( success[i].phoneNum )<0 ){
+					userArr.push(success[i].phoneNum);
+					arr1.push(success[i].phoneNum);
+				}else{
+					arr1.push(success[i].phoneNum);
+				}
+				if( arr2.indexOf( success[i].shopingId )<0  ){
+					shopArr.push(success[i].shopingId);
+					arr2.push(success[i].shopingId);
+				}else{
+					arr2.push(success[i].shopingId);
+				}
+			}
+			// console.log(userArr)//得到所有不重复用户名
+			// console.log(shopArr)//得到所有不重复的店名
+
+			var allUserMesg=[];
+			for(var k=0;k<userArr.length;k++){
+				var obj={};
+				obj.username=userArr[k];
+				obj.moneyCount=0;
+				obj.buyCount=0;
+				obj.store=[];
+				for(var j=0;j<success.length;j++){
+					if(obj.username==success[j].phoneNum){
+						obj.moneyCount+=success[j].money;
+						obj.buyCount+=success[j].number;
+						obj.store.push( success[j].shopingId );
+					}
+				}
+				allUserMesg.push(obj);
 
 			}
+			// console.log(allUserMesg)//得到所有用户的消费总金额，去过的店铺，交易次数
 
+			var allShopMesg=[];
+			for(var k=0;k<shopArr.length;k++){
+				var obj={};
+				obj.shopname=shopArr[k];
+				obj.moneyCount=0;
+				obj.sellCount=0;
+				obj.customer=[];
+				for(var j=0;j<success.length;j++){
+					if(obj.shopname==success[j].shopingId){
+						obj.moneyCount+=success[j].money;
+						obj.sellCount+=success[j].number;
+						obj.customer.push( success[j].phoneNum );
+					}
+				}
+				allShopMesg.push(obj);
+
+			}
+			// console.log(allShopMesg)//得到所有店铺的收入金额，顾客数量，交易次数
+
+			// 设置信息
+			var allMsg=[allUserMesg,allShopMesg];
+			this.setState({
+				arr:success
+			})
+			// console.log(this.state.arr);
 
 		}.bind(this))
 		.fail(function() {
@@ -37,20 +95,22 @@ var SellComponent = React.createClass({
 
 		// {
 		// 	username:111,
-		// 	count:2222
-		// 	shop:[]
+		// 	moneyCount:2222
+			// buyCount:111
+		// 	store:[]
 		// }
 	},
 	render:function() {
-		// console.log(11);
+		console.log(this.state.arr);
 		return (
 				<div className="signIn" >
 					<h1>商品销售情况统计</h1>
-					<div>消费最多的用户:
-						<span>用户名:</span>
-						<span>消费总金额:</span>
-						<span>光顾过的店:</span>
-					</div>
+					<table >
+							<tr><td>用户名</td><td>消费总金额</td><td>光顾过的店</td></tr>
+						{this.state.arr[0].map(function(item,index){
+							return <tr><td>{item.username}</td><td>{item.buyCount}</td><td>{item.store.map(function(item){return <span>item</span>})}</td></tr>
+						})}
+					</table>
 					<br/><hr/>
 					
 					<div>消费超过1000元的用户{}
