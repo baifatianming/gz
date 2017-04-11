@@ -8,14 +8,11 @@ var SellComponent = React.createClass({
 		}
 	},
 	componentDidMount:function(){
-		$.ajax({
-			url: baseUrl+'/sell',
-			type: 'post',
-			dataType: 'json',
-		})
-		.done(function(success) {
+		var url=baseUrl+'/sell';
+		$.get(url,function(data) {
 			// console.log(success);//返回了数据的数组
 			// 整理查找到的数据
+			var success=JSON.parse(data);
 			var userArr=[],shopArr=[],arr1=[],arr2=[];
 			for(var i=0;i<success.length;i++){
 				if(i==0){
@@ -81,27 +78,18 @@ var SellComponent = React.createClass({
 			// 设置信息
 			var allMsg=[allUserMesg,allShopMesg];
 			this.setState({
-				arr:success
+				arr:allMsg
 			})
 			// console.log(this.state.arr);
 
 		}.bind(this))
-		.fail(function() {
-			console.log("error");
-		})
-		.always(function() {
-			console.log("complete");
-		});
 
-		// {
-		// 	username:111,
-		// 	moneyCount:2222
-			// buyCount:111
-		// 	store:[]
-		// }
+
+		
+
 	},
 	render:function() {
-		console.log(this.state.arr);
+		console.log(typeof this.state.arr);
 		return (
 				<div className="signIn" >
 					<h1>商品销售情况统计</h1>

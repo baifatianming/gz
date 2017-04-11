@@ -103,7 +103,7 @@ app.get('/goods',function(request,responce){
     })
 })
 
-app.post('/sell', function(request, response) {
+app.get('/sell', function(request, response) {
     console.log("sell");
     mysql.sell({ TableName: 'shopingcar' }, function(res) {
                 response.send(JSON.stringify(res));
