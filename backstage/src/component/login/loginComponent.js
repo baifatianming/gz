@@ -37,8 +37,10 @@ var LoginComponent = React.createClass({
 				<input ref="name" type="text" placeholder="请输入管理员账户" />
 				<input ref="psw" type="password" placeholder="请输入管理员密码" />
 				<div className="btn">
-					<input type="button" value="登陆" onClick={this.loginHandler}/>
-					<a href="#">忘记密码</a>
+					<div className="mid">
+						<input type="button" value="登录" onClick={this.loginHandler}/>
+						<a href="#">忘记密码</a>
+					</div>
 				</div>
 			</div>
 		)

@@ -104,34 +104,27 @@ var SellComponent = React.createClass({
 		// console.log(this.state.arr[0]);
 		return (
 				<div className="signIn" >
-					<h1>商品销售情况统计</h1>
+					<h3>用户消费统计</h3>
 					 <table >
 					 		<tr><td>用户名</td><td>消费总次数</td><td>消费总金额</td><td>光顾过的店的ID</td></tr>
 					 	{this.state.arr[0].map(function(item,index){
 					 		return <tr><td>{item.username}</td><td>{item.buyCount}</td><td>{item.moneyCount}</td><td>{JSON.stringify(item.store) }</td></tr>
 					 	})}
 					 </table>
-					<br/><hr/>
+					<h3>店铺销售统计</h3>
 					<table >
 							<tr><td>店铺ID</td><td>交易总次数</td><td>交易总收入</td><td>光顾过的用户ID</td></tr>
 						{this.state.arr[1].map(function(item,index){
 							return <tr><td>{item.shopname}</td><td>{item.sellCount}</td><td>{item.moneyCount}</td><td>{JSON.stringify(item.customer) }</td></tr>
 						})}
 					</table>
-					
-					<h1>活跃用户统计</h1>
 					<div>
 						<h3>消费超过1000元的用户:</h3>
 						{this.state.arr[2].map(function(item,index){
 							return <span>{index+1}：{item}，</span>
 						})}
 					</div>
-					<br/><hr/>
-
-					<div>最受欢迎的店铺{}
-						<span>收钱次数:</span>
-						<span>总收入:</span>
-					</div>
+					<br/>
 				</div>
 			)
 		

@@ -1,7 +1,7 @@
 var React = require('react');
 var $ = require('jquery');
 var baseUrl=require('../../../js/baseUrl.js');
-// var style = require('./SignInAnalysisComponent.scss');
+var style = require('./SignInAnalysisComponent.css');
 
 var SignInAnalysisComponent = React.createClass({
 	getInitialState:function(){
@@ -44,14 +44,13 @@ var SignInAnalysisComponent = React.createClass({
 		// console.log(this.state.arr);//当前组件对象
 		return (
 				<div className="signIn" >
-					<h1>注册用户统计</h1>
+					<h3>注册用户统计</h3>
 					<span>总用户:</span>
 					<span>{this.state.arr.length}</span>
-					<br/><hr/>
-					<span>第一个注册的用户名</span>
+					<br/>
+					<span>第一个注册的用户名：</span>
 					<span>{this.state.arr[0].phone}</span>
-					<br/><hr/>
-					<span>所有用户如下：</span><br/>
+					<h3>所有用户如下：</h3>
 					<table >
 							<tr><td>用户名</td><td>密码</td></tr>
 						{this.state.arr.map(function(item,index){
