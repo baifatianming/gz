@@ -1,7 +1,16 @@
-.login{width: 500px; margin: auto; background: #999999;}
-.login>input{display: block;margin: auto;margin-bottom:10px;}
+.login{width: 500px; margin: 100px auto; background: #f3eded;padding: 50px;}
+.login>input{display: block;margin: auto;margin-bottom:10px; width: 200px;height: 30px; border: 1px solid #ccc;border-radius: 2px;}
 .btn{text-align: center;margin: auto; height: 30px;}
 .login .mid{
 	width: 200px;
 	margin-left: 50%;
+}
+.login .mid input{
+	width: 40px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	border: none;
+	background: #f63;
+	color: white;
 }
