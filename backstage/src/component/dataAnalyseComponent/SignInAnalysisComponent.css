@@ -4,7 +4,7 @@
 .signIn h3{
 	text-align: left;
 	padding-left: 20px;
-	background: #ccc;
+	/*background: #ccc;*/
 }
 .signIn span{
 	padding-left: 20px;
@@ -18,7 +18,5 @@
 }
 .signIn table tr td{
 	border: 1px solid black;
-	border-left: none;
-	border-right: none;
 	padding:5px;
 }

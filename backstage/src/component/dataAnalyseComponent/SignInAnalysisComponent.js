@@ -6,7 +6,8 @@ var style = require('./SignInAnalysisComponent.css');
 var SignInAnalysisComponent = React.createClass({
 	getInitialState:function(){
 		return {
-			arr:['hallo kitty']
+			arr:['hallo kitty'],
+			jjk:"number11"
 		}
 	},
 	componentDidMount:function(){
@@ -30,7 +31,8 @@ var SignInAnalysisComponent = React.createClass({
 			}
 			// console.log(userArr);//得到不重复的用户名
 			this.setState({
-				arr:userArr
+				arr:userArr,
+				jjk:"hallo jack"
 			})
 		}.bind(this))
 		.fail(function() {
@@ -41,7 +43,7 @@ var SignInAnalysisComponent = React.createClass({
 		});
 	},
 	render:function() {
-		// console.log(this.state.arr);//当前组件对象
+		console.log(this.state.jjk);//当前组件对象
 		return (
 				<div className="signIn" >
 					<h3>注册用户统计</h3>

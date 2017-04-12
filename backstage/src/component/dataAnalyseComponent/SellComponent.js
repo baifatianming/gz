@@ -119,7 +119,7 @@ var SellComponent = React.createClass({
 						})}
 					</table>
 					<div>
-						<h3>消费超过1000元的用户:</h3>
+						<h3>消费超过1500元的用户:</h3>
 						{this.state.arr[2].map(function(item,index){
 							return <span>{index+1}：{item}，</span>
 						})}

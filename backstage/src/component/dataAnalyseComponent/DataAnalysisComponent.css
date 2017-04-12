@@ -1,3 +1,5 @@
 .box{width:100%;margin: auto; text-align: center;}
-.box a{margin: 0 20px;text-decoration:none;background: #f63;}
-.box .head{background: #ccc;}
+/*.box .head{background: #ccc;}*/
+.box .tagA a{width: 33.3%;height: 40px;line-height: 40px;color: white; float: left;background: #868686;text-align: center;text-decoration:none;}
+.box .tagA a:hover{background: #59595a;}
+.box h1{margin-bottom: 0;}

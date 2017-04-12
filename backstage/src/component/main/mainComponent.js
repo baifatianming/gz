@@ -36,10 +36,10 @@ var MainComponent = React.createClass({
 	},
 	render: function(){
 		return (
-			<div className="dk-container">
-				<div className="dk-header"></div>
-				<div className="dk-body">
-					<div className="dk-menu">
+			<div className="container">
+				<div className="header"><h2>后台管理系统</h2></div>
+				<div className="body">
+					<div className="menu">
 						<ul className="list-group">
 							<li className="list-group-item"><Link to="#page0" >1、网站商品信息显示管理</Link></li>
 							<li className="list-group-item"><Link to="/goods" >2、商品增删查改管理</Link></li>
@@ -50,9 +50,9 @@ var MainComponent = React.createClass({
 							<li className="list-group-item"><Link to="#page6" >7、超级用户管理</Link></li>
 						</ul>
 					</div>
-					<div className="dk-content">{this.props.children}</div>
+					<div className="content">{this.props.children}</div>
 				</div>
-				<div className="dk-footer">@wwwwwwwwww</div>
+				<div className="footer">@wwwwwwwwww</div>
 			</div>
 		)
 	}
