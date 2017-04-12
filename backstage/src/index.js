@@ -17,13 +17,13 @@ ReactDOM.render(
 		<Route path='/' component={MainComponent} >
 			<Route path='goods' component={GoodsComponent}/>
 			<Route path='dataAnalysis' component={DataAnalysisComponent} onEnter={enterFun}>
-				<IndexRoute component={SignInAnalysisComponent} />
-				<Route path="sell" component={SellComponent} />
-				<Route path="other" component={OtherComponent} />
-				<Route path="signin" component={SignInAnalysisComponent} />
+				<IndexRoute component={SignInAnalysisComponent} onEnter={enterFun} />
+				<Route path="sell" component={SellComponent} onEnter={enterFun} />
+				<Route path="other" component={OtherComponent} onEnter={enterFun} />
+				<Route path="signin" component={SignInAnalysisComponent} onEnter={enterFun} />
 			</Route>
 		</Route>
-		<Route path='/login' component={LoginComponent}/>
+		<Route path='/login' component={LoginComponent} onEnter={logOut} />
 		<Route path='/edituser/:userid' component={LoginComponent}/>
 	</Router>,
 	document.getElementById('content')
@@ -56,8 +56,28 @@ function enterFun(nextState, replace, next){
 	// if($('.newdiv')){
 	// 	$('.newdiv').remove();
 	// }
-	
+
 	//$.post
 	//判断当前用户是否已登陆或者是否有权限访问此路由
 	// replace('login');
+}
+
+//每次进入登录页面路由都注销session
+function logOut(){
+	$.ajax({
+		url: baseUrl+'/logOut',
+		type: 'get',
+		dataType: 'json',
+	})
+	.done(function(success) {
+		console.log("success");
+		console.log(success);
+	})
+	.fail(function(error) {
+		console.log(error);
+	})
+	.always(function() {
+		console.log("complete");
+	});
+	
 }
