@@ -93,9 +93,8 @@ var SellComponent = React.createClass({
 			this.setState({
 				arr:allMsg
 			})
-			// console.log(typeof this.state.arr[0]);
-			// console.log(typeof this.state.arr[2]);
-			this.state.activeUser()
+			// console.log(typeof this.state.arr[0]);//查看数据类型
+			// this.state.activeUser()
 
 		}.bind(this))
 

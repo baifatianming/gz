@@ -23,7 +23,7 @@ var MainComponent = React.createClass({
 				window.location.href='http://localhost:99/#/login';
 				return false;
 			}
-			$("<div class='newdiv'>'你好'"+success.name+"</div>").appendTo('body');
+			$("<div class='newdiv'>你好 "+success.name+"</div><a class='logout' href='http://localhost:99/#/login'>注销</a>").appendTo('body');
 		})
 		.fail(function(error) {
 			console.log("error");

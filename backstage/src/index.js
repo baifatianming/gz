@@ -51,11 +51,12 @@ function enterFun(nextState, replace, next){
 	.always(function() {
 		console.log("complete");
 	});
-	//进入数据统计分析时清除问候语
-	if($('.newdiv')){
-		$('.newdiv').remove();
-	}
 	next();
+	//进入数据统计分析时清除问候语
+	// if($('.newdiv')){
+	// 	$('.newdiv').remove();
+	// }
+	
 	//$.post
 	//判断当前用户是否已登陆或者是否有权限访问此路由
 	// replace('login');

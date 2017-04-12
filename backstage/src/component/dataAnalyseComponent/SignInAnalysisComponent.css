@@ -20,3 +20,22 @@
 	border: 1px solid black;
 	padding:5px;
 }
+.signIn .pageNum{
+	text-align:left;
+	padding-left: 20px;
+	margin-top: 10px;
+}
+.signIn .pageNum input{
+	width: 30px;
+	height: 30px;
+	border: none;
+	background: #ccc;
+	margin-right: 2px;
+	color: black;
+	text-align: center;
+
+}
+.signIn .pageNum input:hover{
+	background: #222;
+	color: white;
+}
