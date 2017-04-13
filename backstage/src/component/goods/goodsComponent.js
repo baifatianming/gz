@@ -2,12 +2,12 @@ var React = require('react');
 var $ = require('jquery');
 var style = require('./goodsComponent.css');
 var goodsAction = require('../../action/goodsAction.js');
-
+var goodsReducer = require('../../reducers/goodsReducer.js');
 
 var GoodsComponent = React.createClass({
 render:function(){
     var array = [];
-    for(var key in this.props.goodsdata[0]){
+    for(var key in this.props.goodsReducer.goodsdata[0]){
       array.push(key);
       array.splice(8)
 
@@ -30,7 +30,7 @@ render:function(){
               })}
             </thead>
             <tbody className="tbody">
-              {this.props.goodsdata.map(function(item,index){
+              {this.props.goodsReducer.goodsdata.map(function(item,index){
                 return <tr>
                   <td>{item.indexid}</td>
                   <td>{item.shopingId}</td>

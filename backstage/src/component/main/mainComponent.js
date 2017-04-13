@@ -41,7 +41,7 @@ var MainComponent = React.createClass({
 				<div className="body">
 					<div className="menu">
 						<ul className="list-group">
-							<li className="list-group-item"><Link to="#page0" >1、网站商品信息显示管理</Link></li>
+							<li className="list-group-item"><Link to="/message" >1、网站商品信息显示管理</Link></li>
 							<li className="list-group-item"><Link to="/goods" >2、商品增删查改管理</Link></li>
 							<li className="list-group-item"><Link to="#page2" >3、商品库存信息管理</Link></li>
 							<li className="list-group-item"><Link to="#page3" >4、订单管理</Link></li>

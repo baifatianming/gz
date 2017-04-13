@@ -109,6 +109,7 @@ module.exports = {
 		});
 		client.end();
 	},
+
 	goodsinsert:function(data,_calback){
 		var client = mysql.createConnection({
 			user:username,
@@ -132,7 +133,35 @@ module.exports = {
 			}
 		});
 		client.end();
-	}
+	},
+
+  delete:function(data,_calback){
+    var client = mysql.createConnection({
+      user:username,
+      password:password
+    });
+
+    client.connect(function(err){
+      if(err){
+        console.log(err);
+        return;
+      }
+    });
+
+    client.query('use '+TEST_DATABASE1);
+    client.query(`DELETE FROM ${data.TableName} where ${data.conditionName} = ${data.value}`,function(err,result,fields){
+      if(err){
+        _calback(err);
+        console.log(err)
+        return;
+      }else{
+        _calback(result);
+        console.log(result);
+      }
+    });
+    client.end();
+  }
+
 }
 // +"','"+data.describe+"','"+data.price+"','"+data.src+
 

@@ -12,15 +12,25 @@ var SellComponent = require('./component/dataAnalyseComponent/SellComponent.js')
 var ActiveUserComponent = require('./component/dataAnalyseComponent/ActiveUserComponent.js');
 var OtherComponent = require('./component/dataAnalyseComponent/OtherComponent.js');
 var GoodsComponent = require('./container/goodsContainer.js');
-var GoodsReducer = require('./reducers/goodsReducer.js')
-var store = redux.createStore(GoodsReducer);
+// var indexReducer = require('./reducers/indexReducers.js')
+import indexReducer from './reducers/indexReducers'
+var {Router, Route, hashHistory, Link, IndexRoute, browserHistory} = require('react-router');
+
+var redux = require('redux');
+var {Provider} = require('react-redux');
+
+var MessageComponent = require('./container/messageContainer.js');
+var store = redux.createStore(indexReducer);
 var {Router, Route, hashHistory, Link, IndexRoute, browserHistory} = require('react-router');
 
 ReactDOM.render(
+
 <Provider store={store}>
+
 	<Router history={hashHistory}>
 		<Route path='/' component={MainComponent} >
 			<Route path='goods' component={GoodsComponent}/>
+			<Route path='message' component={MessageComponent}/>
 			<Route path='dataAnalysis' component={DataAnalysisComponent} onEnter={enterFun}>
 				<IndexRoute component={SignInAnalysisComponent} onEnter={enterFun} />
 				<Route path="sell" component={SellComponent} onEnter={enterFun} />
@@ -32,6 +42,7 @@ ReactDOM.render(
 		<Route path='/edituser/:userid' component={LoginComponent}/>
 	</Router>
 </Provider>,
+
 	document.getElementById('content')
 )
 
