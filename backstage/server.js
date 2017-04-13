@@ -29,7 +29,7 @@ server.listen(3000, 'localhost', function(err, result) {});
 
 // 加载sql模块
 // var mysql = require('./mysql');
-var mysql = require('./js/connectmysql');
+var mysql = require('./js/connectmysql.js');
 
 app.use(express.static(path.join(__dirname,'/')));
 
@@ -120,10 +120,16 @@ app.get('/sell', function(request, response) {
 
 
 //肖1111111111111111111111111111111111111111111111111111
-app.get('/goods',function(request,responce){
+app.post('/goods',urlencodedParser,function(request,responce){
+
+    console.log(request.body)
+    mysql.goodsinsert({TableName:'merchant',shopingId:request.body.shopingId,name:request.body.name,describe:request.body.describe,price:request.body.price,src:request.body.src},function(){
+    });
     mysql.findUser({TableName:'merchant'},function(res){
         responce.send(res);
     })
+
+
 })
 
 app.listen(99);

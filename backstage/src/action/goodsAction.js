@@ -1,8 +1,9 @@
-var goodsDispatcher = require('../dispatcher/goodsDispatcher.js');
+var {ADD,DEL} = require('../constants/goodsConstants.js');
 
-var goodsAction = {
-  add:function(type){
-
-  }
+exports.add = function(){
+  location.reload();
+  return {type:ADD};
 }
-module.exports = goodsAction;
+exports.del = function(){
+  return {type:DEL};
+}
