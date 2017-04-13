@@ -18,7 +18,8 @@ var session = require('express-session');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var config = require('./webpack.config.js');
-
+// var mask = require('./maskljx.js');
+// var $ = require('jquery');
 var server = new WebpackDevServer(webpack(config), {
   stats: config.devServer.stats,
   hot: true,
@@ -33,8 +34,8 @@ var mysql = require('./js/connectmysql');
 
 app.use(express.static(path.join(__dirname,'/')));
 
-app.use(cookieParser());
-app.use(session({
+    app.use(cookieParser());
+    app.use(session({
     secret: '12345', //用来对session数据进行加密的字符串.这个属性值为必须指定的属性
     name: 'goodcar', //这里的name值得是cookie的name，默认cookie的name是：connect.sid
     cookie: { maxAge: 8000000 }, //设置maxAge是80000ms，即80s后session和相应的cookie失效过期
@@ -65,14 +66,14 @@ app.post("/login", urlencodedParser, function(request, response) {
     //如果有，设置session
     mysql.get({ TableName: 'supermanager' }, function(res) {
       console.log(res);
-            if(res[0].username == request.body.name){
+      if(res[0].username == request.body.name){
             	// 此时成功匹配，设置session
             	request.session.name = request.body.name;
             	console.log(request.session.name);
-            	response.send('true');
-            }
+    response.send('true');
+}
 
-        })
+})
 
 });
 
@@ -98,10 +99,10 @@ app.get('/logOut', function(request, response) {
 app.post('/findUser', function(request, response) {
     console.log("findUser");
     mysql.findUser({ TableName: 'login' }, function(res) {
-                response.send(JSON.stringify(res));
+        response.send(JSON.stringify(res));
 
 
-        })
+    })
 
 });
 app.get('/goods',function(request,responce){
@@ -111,21 +112,25 @@ app.get('/goods',function(request,responce){
 })
 
 app.post('/message',urlencodedParser,function(request,response){
-    mysql.delete({TableName:'goods',conditionName:'indexid',value:request.body.indexid},function(){
-        console.log('finish');
-    })
+    // mask.show();
+    if(request.body.indexid!=undefined){
+        mysql.delete({TableName:'goods',conditionName:'indexid',value:request.body.indexid},function(){
+            console.log('2');
+        })
+    }
     mysql.findUser({TableName:'goods'},function(res){
+        // mask.hide();
         response.send(res);
     })
 })
 
-app.get('/sell', function(request, response) {
-    console.log("sell");
-    mysql.sell({ TableName: 'shopingcar' }, function(res) {
+        app.get('/sell', function(request, response) {
+            console.log("sell");
+            mysql.sell({ TableName: 'shopingcar' }, function(res) {
                 response.send(JSON.stringify(res));
-        })
+            })
 
-})
+        })
 
 
 
