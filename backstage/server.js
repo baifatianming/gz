@@ -64,6 +64,7 @@ app.post("/login", urlencodedParser, function(request, response) {
     //先检查数据库是否有匹配用户
     //如果有，设置session
     mysql.get({ TableName: 'supermanager' }, function(res) {
+      console.log(res);
             if(res[0].username == request.body.name){
             	// 此时成功匹配，设置session
             	request.session.name = request.body.name;
@@ -106,6 +107,15 @@ app.post('/findUser', function(request, response) {
 app.get('/goods',function(request,responce){
     mysql.findUser({TableName:'merchant'},function(res){
         responce.send(res);
+    })
+})
+
+app.post('/message',urlencodedParser,function(request,response){
+    mysql.delete({TableName:'goods',conditionName:'indexid',value:request.body.indexid},function(){
+        console.log('finish');
+    })
+    mysql.findUser({TableName:'goods'},function(res){
+        response.send(res);
     })
 })
 

@@ -12,10 +12,19 @@ var OtherComponent = require('./component/dataAnalyseComponent/OtherComponent.js
 var GoodsComponent = require('./component/goods/goodsComponent.js');
 var {Router, Route, hashHistory, Link, IndexRoute, browserHistory} = require('react-router');
 
+var redux = require('redux');
+var {Provider} = require('react-redux');
+var MessageReducer = require('./reducers/messageReducers.js');
+var MessageComponent = require('./container/messageContainer.js');
+var goodsStore = redux.createStore(MessageReducer);
+var {Router, Route, hashHistory, Link, IndexRoute, browserHistory} = require('react-router');
+
 ReactDOM.render(
+	<Provider store={goodsStore}>
 	<Router history={hashHistory}>
 		<Route path='/' component={MainComponent} >
 			<Route path='goods' component={GoodsComponent}/>
+			<Route path='message' component={MessageComponent}/>
 			<Route path='dataAnalysis' component={DataAnalysisComponent} onEnter={enterFun}>
 				<IndexRoute component={SignInAnalysisComponent} onEnter={enterFun} />
 				<Route path="sell" component={SellComponent} onEnter={enterFun} />
@@ -25,7 +34,8 @@ ReactDOM.render(
 		</Route>
 		<Route path='/login' component={LoginComponent} onEnter={logOut} />
 		<Route path='/edituser/:userid' component={LoginComponent}/>
-	</Router>,
+	</Router>
+	</Provider>,
 	document.getElementById('content')
 )
 
@@ -46,7 +56,7 @@ function enterFun(nextState, replace, next){
 	})
 	.fail(function(error) {
 		console.log("error");
-		
+
 	})
 	.always(function() {
 		console.log("complete");
@@ -79,5 +89,5 @@ function logOut(){
 	.always(function() {
 		console.log("complete");
 	});
-	
+
 }
