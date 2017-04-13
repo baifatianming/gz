@@ -25,23 +25,27 @@ var MessageComponent = React.createClass({
         return <th>{arr[index]}</th>
       })}
       <th>删除</th>
+      <th>修改</th>
       </tr>
       <tbody className="tbody">
       {this.props._response.map(function(item,index){
         return (<tr>
           <td>{item.indexid}</td>
-          <td>{item.shopingId}</td>
-          <td>{item.name}</td>
-          <td>{item.address}</td>
-          <td>{item.phone}</td>
-          <td>{item.describe}</td>
-          <td>{item.type}</td>
-          <td>{item.star}</td>
-          <td>{item.price}</td>
-          <td>{item.del}</td>
-          <td>{item.src}</td>
+          <td contentEditable="true">{item.shopingId}</td>
+          <td contentEditable="true">{item.name}</td>
+          <td contentEditable="true">{item.address}</td>
+          <td contentEditable="true">{item.phone}</td>
+          <td contentEditable="true">{item.describe}</td>
+          <td contentEditable="true">{item.type}</td>
+          <td contentEditable="true">{item.star}</td>
+          <td contentEditable="true">{item.price}</td>
+          <td contentEditable="true">{item.del}</td>
+          <td contentEditable="true">{item.src}</td>
           <td>
           <input type="button" value="删除" onClick={this.props.deleteColumn}/>
+          </td>
+          <td>
+            <input type="button" value="修改"/>
           </td>
           </tr>)
       }.bind(this))}
