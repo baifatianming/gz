@@ -1,4 +1,10 @@
 1、新建management数据库，导入sql文件夹的supermanager.sql文件
+
+   在mysql里面运行sql文件(createsqldata.sql)
+
+   把js/connectmysql:里面的username和password修改成本地连接mysql
+   的用户名和密码
+
 2、运行 npm install
 3、打开服务器
 4、运行 node server

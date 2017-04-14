@@ -47,7 +47,7 @@ var MainComponent = React.createClass({
 							<li className="list-group-item"><Link to="#page3" >4、订单管理</Link></li>
 							<li className="list-group-item"><Link to="/dataAnalysis" >5、数据统计</Link></li>
 							<li className="list-group-item"><Link to="#page5" >6、用户信息管理</Link></li>
-							<li className="list-group-item"><Link to="#page6" >7、超级用户管理</Link></li>
+							<li className="list-group-item"><Link to="/super" >7、超级用户管理</Link></li>
 						</ul>
 					</div>
 					<div className="content">{this.props.children}</div>

@@ -147,4 +147,31 @@ app.post('/goods',urlencodedParser,function(request,responce){
 
 })
 
+app.get('/super',function(request,response){
+   
+    if(request.query.type=='del'){
+        mysql.delete({TableName:'login',conditionName:'indexid',value:request.query.num},function(res){   
+            response.send(res);
+        })
+    }else if(request.query.type =='modify'){
+        mysql.update({TableName:'login',value:request.query.num,phone:request.query.phone,password:request.query.password},function(res){
+            response.send(res);
+        })
+    }else if(request.query.type=='add'){
+        mysql.insert({TableName:'login',phone:request.query.phone,password:request.query.password},function(res){
+             response.send(res);
+        })
+    }else if(request.query.type=='find'){
+        // console.log(request.query);
+        mysql.query({TableName:'login',conditionName:request.query.condition,value:request.query.value},function(res){
+            response.send(res);
+        })
+    }else{
+         mysql.findUser({TableName:'login'},function(res){
+           response.send(res);
+        }); 
+    }
+
+})
+
 app.listen(99);

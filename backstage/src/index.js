@@ -12,6 +12,7 @@ var SellComponent = require('./component/dataAnalyseComponent/SellComponent.js')
 var ActiveUserComponent = require('./component/dataAnalyseComponent/ActiveUserComponent.js');
 var OtherComponent = require('./component/dataAnalyseComponent/OtherComponent.js');
 var GoodsComponent = require('./container/goodsContainer.js');
+var SuperComponent = require('./container/superContainer.js');
 // var indexReducer = require('./reducers/indexReducers.js')
 import indexReducer from './reducers/indexReducers'
 var {Router, Route, hashHistory, Link, IndexRoute, browserHistory} = require('react-router');
@@ -37,6 +38,7 @@ ReactDOM.render(
 				<Route path="other" component={OtherComponent} onEnter={enterFun} />
 				<Route path="signin" component={SignInAnalysisComponent} onEnter={enterFun} />
 			</Route>
+			<Route path='/super' component={SuperComponent}/>
 		</Route>
 		<Route path='/login' component={LoginComponent} onEnter={logOut} />
 		<Route path='/edituser/:userid' component={LoginComponent}/>
