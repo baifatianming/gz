@@ -29,21 +29,21 @@ var SuperComponent = React.createClass({
 		return (
 			<div className="superPage">
 				<div>
-					<input className='phoneN' type="text" placeholder="phone"/>
-					<input className="pawN" type="text" placeholder="password"/>
-					<button onClick={this.props.add}>增加数据</button>
+					<input className='phoneN form-control' type="text" placeholder="phone"/>
+					<input className="pawN form-control" type="text" placeholder="password"/>
+					<button className="btn btn-default" onClick={this.props.add}>增加数据</button>
 					<br/>
-					<select className="condition">
+					<select className="condition form-control">
 						<option value="indexid">indexid</option>
 						<option value="phone">phone</option>
 						<option value="password">password</option>
 					</select>
-					<input className="conditionN" type="text"/>
-					<button onClick={this.props.find}>查找数据</button>
+					<input className="conditionN form-control" type="text"/>
+					<button className="btn btn-default" onClick={this.props.find}>查找数据</button>
 				</div>
 
 				<div>	
-					<table>
+					<table className="table table-hover">
 						<thead>
 							<tr>
 								{
@@ -61,8 +61,8 @@ var SuperComponent = React.createClass({
 										<td><input value={item.indexid}/></td>	
 										<td><input defaultValue={item.phone}/></td>
 										<td><input defaultValue={item.password}/></td>
-										<td><button onClick={this.props.del}>删除</button></td>
-										<td><button onClick={this.props.modify}>修改数据</button></td>
+										<td><button className="btn btn-default" onClick={this.props.del}>删除</button></td>
+										<td><button className="btn btn-default" onClick={this.props.modify}>修改数据</button></td>
 									</tr>
 								}.bind(this))
 							}
